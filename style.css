@@ -211,17 +211,21 @@ a {
 }
 
 
+
 /* ABOUT */
 
-
 .about {
-    width: 100%;
-    max-width: 750px;
-    margin: 0 auto;
-    padding: 100px 24px;
+    max-width: 100%;
+    padding: 100px 9%;
 }
 
-.about p {
+.about h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.about > p {
+    max-width: 750px;
     line-height: 1.9;
     margin-bottom: 40px;
 }
@@ -234,13 +238,20 @@ a {
 }
 
 .about-details p {
-    margin: 0;
+    margin: 8px 0 0;
     line-height: 1.8;
 }
 
 .about-details a {
     display: inline-block;
     margin-top: 12px;
+    color: var(--blue);
+}
+
+@media (max-width: 550px) {
+    .about {
+        padding: 60px 7%;
+    }
 }
 
 
