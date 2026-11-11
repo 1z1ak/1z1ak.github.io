@@ -1,1142 +1,208 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Iziak Kwan | Engineering Portfolio</title>
+    <title>IZIAK KWAN | Mechanical Design</title>
 
-    <meta name="description" content="Engineering portfolio of Iziak Kwan, Simon Fraser University Engineering Science student.">
+    <meta name="description"
+          content="Mechanical design and SolidWorks portfolio.">
 
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #0d1728;
-            color: #e8edf5;
-            line-height: 1.7;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        /* NAVIGATION */
-
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: #111e32;
-            border-bottom: 1px solid #26364c;
-            padding: 18px 8%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 21px;
-            font-weight: bold;
-            color: white;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #b8c5d6;
-            font-size: 14px;
-            transition: 0.2s;
-        }
-
-        nav a:hover {
-            color: #50aaff;
-        }
-
-        /* HERO */
-
-        .hero {
-            padding: 120px 8% 110px;
-            background: linear-gradient(
-                120deg,
-                #14243c,
-                #0d1728
-            );
-        }
-
-        .hero .tag {
-            color: #50aaff;
-            font-weight: bold;
-            letter-spacing: 2px;
-            font-size: 13px;
-        }
-
-        .hero h1 {
-            font-size: clamp(38px, 6vw, 64px);
-            line-height: 1.2;
-            margin: 20px 0;
-            max-width: 800px;
-        }
-
-        .hero p {
-            color: #aab8cb;
-            font-size: 18px;
-            max-width: 650px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 23px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 14px;
-        }
-
-        .primary {
-            background: #2689df;
-            color: white;
-        }
-
-        .secondary {
-            border: 1px solid #52647c;
-            color: white;
-        }
-
-        .btn:hover {
-            opacity: 0.8;
-        }
-
-        /* GENERAL SECTIONS */
-
-        section {
-            padding: 85px 8%;
-            scroll-margin-top: 75px;
-        }
-
-        .section-label {
-            color: #50aaff;
-            text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 2px;
-            font-weight: bold;
-        }
-
-        .section-title {
-            font-size: 34px;
-            margin: 10px 0 35px;
-        }
-
-        .section-description {
-            color: #aab8cb;
-            max-width: 700px;
-            margin-top: -20px;
-            margin-bottom: 30px;
-        }
-
-        /* ==============================
-           FEATURED SOLIDWORKS MODELS
-        ============================== */
-
-        .featured-models {
-            background: #0d1728;
-            padding: 85px 8%;
-        }
-
-        .featured-header {
-            margin-bottom: 30px;
-        }
-
-        .featured-header h2 {
-            font-size: 34px;
-            margin: 10px 0;
-        }
-
-        .featured-header p {
-            color: #aab8cb;
-            font-size: 14px;
-        }
-
-        .featured-carousel {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 40px;
-            align-items: center;
-            background: #192940;
-            border: 1px solid #2b3e56;
-            border-radius: 10px;
-            padding: 25px;
-        }
-
-        .featured-image-container {
-            background: #e9edf2;
-            border-radius: 7px;
-            overflow: hidden;
-            min-width: 0;
-        }
-
-        .featured-image-container img {
-            display: block;
-            width: 100%;
-            height: 360px;
-            object-fit: contain;
-            padding: 15px;
-        }
-
-        .featured-info h3 {
-            font-size: 27px;
-            margin-bottom: 15px;
-        }
-
-        .featured-info p {
-            color: #aab8cb;
-            font-size: 14px;
-            line-height: 1.9;
-            margin-bottom: 20px;
-        }
-
-        .featured-tags {
-            color: #50aaff;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 25px;
-        }
-
-        .featured-link {
-            display: inline-block;
-            color: #50aaff;
-            text-decoration: none;
-            font-size: 14px;
-            margin-bottom: 30px;
-        }
-
-        .featured-link:hover {
-            color: white;
-        }
-
-        .featured-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .featured-controls button {
-            background: transparent;
-            border: 1px solid #52647c;
-            color: white;
-            padding: 9px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .featured-controls button:hover:not(:disabled) {
-            border-color: #50aaff;
-            color: #50aaff;
-        }
-
-        .featured-controls button:disabled {
-            opacity: 0.35;
-            cursor: not-allowed;
-        }
-
-        .featured-counter {
-            color: #aab8cb;
-            font-size: 12px;
-        }
-
-        /* PROJECTS */
-
-        #projects {
-            background: #111e32;
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(270px, 1fr));
-            gap: 25px;
-        }
-
-        .project-card {
-            background: #192940;
-            border: 1px solid #2b3e56;
-            border-radius: 9px;
-            overflow: hidden;
-            transition: 0.25s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            border-color: #50aaff;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 210px;
-            object-fit: contain;
-            background: #e9edf2;
-            padding: 12px;
-        }
-
-        .project-content {
-            padding: 23px;
-        }
-
-        .project-content h3 {
-            margin-bottom: 12px;
-            font-size: 20px;
-        }
-
-        .project-content p {
-            color: #aab8cb;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .technology {
-            color: #50aaff;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #50aaff;
-            font-size: 14px;
-            text-decoration: none;
-        }
-
-        /* SKILLS */
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns:
-                repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-card {
-            background: #192940;
-            border: 1px solid #2b3e56;
-            border-radius: 8px;
-            padding: 25px;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 15px;
-            color: #50aaff;
-        }
-
-        .skill-card p {
-            color: #b8c5d6;
-            font-size: 14px;
-        }
-
-        /* ABOUT */
-
-        #about {
-            background: #111e32;
-        }
-
-        .about-content {
-            max-width: 800px;
-            color: #b8c5d6;
-        }
-
-        .education {
-            margin-top: 25px;
-            padding: 22px;
-            background: #192940;
-            border-left: 3px solid #50aaff;
-            border-radius: 5px;
-        }
-
-        /* RESUME */
-
-        .resume-box {
-            background: #192940;
-            padding: 30px;
-            border: 1px solid #2b3e56;
-            border-radius: 8px;
-            max-width: 650px;
-        }
-
-        .resume-box p {
-            color: #b8c5d6;
-            margin-bottom: 20px;
-        }
-
-        /* CONTACT */
-
-        .contact-content {
-            max-width: 650px;
-            color: #b8c5d6;
-        }
-
-        .contact-content p {
-            margin: 12px 0;
-        }
-
-        .contact-content a {
-            color: #50aaff;
-            text-decoration: none;
-        }
-
-        /* FOOTER */
-
-        footer {
-            background: #080f1c;
-            text-align: center;
-            padding: 25px;
-            color: #8190a5;
-            font-size: 13px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 800px) {
-
-            .featured-carousel {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .featured-image-container img {
-                height: 280px;
-            }
-
-            .featured-info h3 {
-                font-size: 23px;
-            }
-
-        }
-
-        @media (max-width: 650px) {
-
-            header {
-                gap: 15px;
-            }
-
-            nav {
-                gap: 12px;
-                flex-wrap: wrap;
-            }
-
-            nav a {
-                font-size: 12px;
-            }
-
-            .hero {
-                padding: 85px 7%;
-            }
-
-            section {
-                padding: 65px 7%;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .featured-models {
-                padding: 60px 7%;
-            }
-
-            .featured-header h2 {
-                font-size: 28px;
-            }
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ==============================
-     NAVIGATION
-============================== -->
-
 <header>
+    <nav class="navbar">
 
-    <div class="logo">IZIAK KWAN</div>
+        <a href="#" class="logo">IZIAK KWAN.</a>
 
-    <nav>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="documents/resume.pdf" target="_blank">Resume ↗</a>
+        </div>
+
     </nav>
-
 </header>
 
+<main>
 
-<!-- ==============================
-     HOME
-============================== -->
+    <!-- HERO -->
 
-<div class="hero">
+    <section class="hero">
 
-    <div class="tag">ENGINEERING SCIENCE STUDENT</div>
+        <div class="hero-content">
 
-    <h1>
-        Engineering Design.<br>
-        Technical Innovation.<br>
-        Practical Solutions.
-    </h1>
+            <p class="eyebrow">ENGINEERING SCIENCE · SFU</p>
 
-    <p>
-        I am an Engineering Science student at Simon Fraser
-        University with interests in mechanical design,
-        electronics, embedded systems and hardware development.
-        I enjoy applying engineering principles to solve
-        practical problems through design, programming and
-        hands-on experimentation.
-    </p>
+            <h1>
+                Mechanical Design<br>
+                <span>& 3D CAD.</span>
+            </h1>
 
-    <div class="hero-buttons">
+            <p class="hero-description">
+                Engineering student interested in mechanical
+                design, SolidWorks, mechanical assemblies
+                and product development.
+            </p>
 
-        <a href="#projects" class="btn primary">
-            Explore Projects
-        </a>
+            <a href="#projects" class="hero-link">
+                Explore projects ↓
+            </a>
 
-        <a href="documents/resume.pdf"
-           class="btn secondary"
-           target="_blank">
-            View Resume
-        </a>
-
-    </div>
-
-</div>
-
-
-<!-- ==============================
-     FEATURED SOLIDWORKS MODELS
-============================== -->
-
-<section class="featured-models" id="featured-models">
-
-    <div class="featured-header">
-
-        <div class="section-label">
-            MECHANICAL DESIGN
         </div>
 
-        <h2>Featured SolidWorks Models</h2>
-
-        <p>
-            A showcase of mechanical CAD models,
-            assemblies and engineering design projects.
-        </p>
-
-    </div>
-
-    <div class="featured-carousel">
-
-        <!-- MODEL IMAGE -->
-
-        <div class="featured-image-container">
+        <div class="hero-image">
 
             <img
-                id="featured-image"
-                src="images/solidworks-model.png"
-                alt="Differential Gearbox">
+                src="images/hero-model.png"
+                alt="Featured SolidWorks model">
 
         </div>
 
+    </section>
 
-        <!-- MODEL INFORMATION -->
 
-        <div class="featured-info">
+    <!-- PROJECTS -->
 
-            <div class="section-label" id="featured-category">
-                MECHANICAL ASSEMBLY
-            </div>
+    <section id="projects" class="section">
 
-            <h3 id="featured-title">
-                Differential Gearbox
-            </h3>
+        <div class="section-heading">
 
-            <p id="featured-description">
-                Designed and assembled a multi-component
-                differential gearbox using SolidWorks.
-                Focused on 3D CAD modelling, component
-                alignment, assembly relationships and
-                mechanical design.
-            </p>
+            <h2>Selected Projects</h2>
 
-            <div class="featured-tags" id="featured-tags">
-                SolidWorks | 3D CAD | Mechanical Design
-            </div>
+            <p>Mechanical design · CAD · Engineering</p>
 
-            <a
-                id="featured-link"
-                class="featured-link"
-                href="projects/differential-gearbox/index.html">
+        </div>
 
-                Explore Project →
+        <div class="project-grid">
+
+            <a href="projects/differential-gearbox/"
+               class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="projects/differential-gearbox/thumbnail.PNG"
+                        alt="Differential Gearbox SolidWorks assembly">
+
+                    <span class="project-view">
+                        VIEW PROJECT ↗
+                    </span>
+
+                </div>
+
+                <div class="project-info">
+
+                    <div>
+                        <h3>Differential Gearbox</h3>
+                        <p>Mechanical Assembly · SolidWorks</p>
+                    </div>
+
+                    <span class="project-number">01</span>
+
+                </div>
 
             </a>
 
-            <!-- CAROUSEL CONTROLS -->
+        </div>
 
-            <div class="featured-controls">
+    </section>
 
-                <button
-                    type="button"
-                    id="featured-prev"
-                    aria-label="Previous project">
-                    ←
-                </button>
 
-                <span
-                    class="featured-counter"
-                    id="featured-counter">
-                    1 / 1
-                </span>
+    <!-- SKILLS -->
 
-                <button
-                    type="button"
-                    id="featured-next"
-                    aria-label="Next project">
-                    →
-                </button>
+    <section class="section skills">
 
-            </div>
+        <h2>Technical Skills</h2>
+
+        <div class="skill-list">
+
+            <span>SolidWorks</span>
+            <span>3D CAD Modelling</span>
+            <span>Mechanical Assemblies</span>
+            <span>Engineering Drawings</span>
+            <span>MATLAB</span>
+            <span>C++</span>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- ==============================
-     PROJECTS
-============================== -->
+    <!-- ABOUT -->
 
-<section id="projects">
+    <section id="about" class="section about">
 
-    <div class="section-label">PORTFOLIO</div>
+        <h2>About Me</h2>
 
-    <h2 class="section-title">Engineering Projects</h2>
+        <p>
+            I am an Engineering Science student at Simon Fraser University
+            with an interest in mechanical design, 3D CAD modelling and
+            mechanical systems. I use this portfolio to document my
+            engineering projects and development as a designer.
+        </p>
 
-    <p class="section-description">
-        A collection of engineering, programming,
-        electronics and mechanical design projects.
-    </p>
+        <div class="about-details">
 
-    <div class="project-grid">
+            <div>
+                <strong>Education</strong>
+                <p>Simon Fraser University · Engineering Science</p>
+            </div>
 
+            <div>
+                <strong>Focus</strong>
+                <p>Mechanical Design & Product Development</p>
+            </div>
 
-        <!-- SOLIDWORKS -->
-
-        <div class="project-card">
-
-            <img src="images/solidworks-model.png"
-                 alt="SolidWorks mechanical CAD model">
-
-            <div class="project-content">
-
-                <h3>Mechanical CAD Design</h3>
-
-                <p>
-                    Developed a three-dimensional mechanical
-                    model using SolidWorks. Applied CAD
-                    modelling techniques to create and
-                    visualize engineering components.
-                </p>
-
-                <div class="technology">
-                    SolidWorks | 3D CAD | Mechanical Design
-                </div>
-
-                <a class="project-link"
-                   href="documents/solidworks-drawing.pdf"
-                   target="_blank">
-                    View Engineering Drawing →
+            <div>
+                <a href="documents/resume.pdf" target="_blank">
+                    View Resume ↗
                 </a>
-
             </div>
 
         </div>
 
+    </section>
 
-        <!-- DIGITAL CLOCK -->
 
-        <div class="project-card">
+    <!-- CONTACT -->
 
-            <img src="images/digital-clock.jpg"
-                 alt="Digital alarm clock FPGA project">
+    <section id="contact" class="section contact">
 
-            <div class="project-content">
+        <h2>Get in touch.</h2>
 
-                <h3>Digital Alarm Clock</h3>
+        <p>Interested in connecting or collaborating?</p>
 
-                <p>
-                    Designed and implemented an FPGA-based
-                    digital alarm clock with time-setting,
-                    alarm functionality, finite state
-                    machines and seven-segment displays.
-                </p>
+        <div class="contact-links">
 
-                <div class="technology">
-                    VHDL | FPGA | Quartus | ModelSim
-                </div>
+            <a href="https://github.com/1z1ak"
+               target="_blank">GitHub</a>
 
-            </div>
+            <a href="https://www.linkedin.com/in/iziakkwan/"
+               target="_blank">LinkedIn</a>
+
+            <a href="mailto:ika35@sfu.ca">Email</a>
 
         </div>
 
+    </section>
 
-        <!-- AM RADIO -->
+</main>
 
-        <div class="project-card">
-
-            <img src="images/am-radio.jpg"
-                 alt="AM radio electronics project">
-
-            <div class="project-content">
-
-                <h3>AM Radio Receiver</h3>
-
-                <p>
-                    Built an AM radio receiver consisting
-                    of a tuning circuit, AM detector and
-                    headphone amplifier. Worked with
-                    analog electronic components and
-                    circuit analysis.
-                </p>
-
-                <div class="technology">
-                    Analog Electronics | TL072 | Circuit Design
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- BLACKJACK -->
-
-        <div class="project-card">
-
-            <img src="images/blackjack.jpg"
-                 alt="C++ Blackjack programming project">
-
-            <div class="project-content">
-
-                <h3>Object-Oriented Blackjack Game</h3>
-
-                <p>
-                    Developed a terminal-based Blackjack
-                    game using object-oriented programming.
-                    Implemented game logic, card management,
-                    input validation and data structures.
-                </p>
-
-                <div class="technology">
-                    C++ | OOP | Data Structures
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- AUTOMOTIVE -->
-
-        <div class="project-card">
-
-            <img src="images/automotive-repair.jpg"
-                 alt="Automotive mechanical repair">
-
-            <div class="project-content">
-
-                <h3>Automotive Mechanical Repair</h3>
-
-                <p>
-                    Independently investigated and performed
-                    mechanical repairs involving automotive
-                    axle and ball joint issues. Applied
-                    troubleshooting and mechanical
-                    problem-solving techniques.
-                </p>
-
-                <div class="technology">
-                    Mechanical Systems | Diagnostics | Repair
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- ==============================
-     SKILLS
-============================== -->
-
-<section id="skills">
-
-    <div class="section-label">CAPABILITIES</div>
-
-    <h2 class="section-title">Technical Skills</h2>
-
-    <div class="skills-grid">
-
-        <div class="skill-card">
-
-            <h3>Programming</h3>
-
-            <p>
-                C++<br>
-                MATLAB<br>
-                VHDL<br>
-                Object-Oriented Programming
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <h3>CAD & Design</h3>
-
-            <p>
-                SolidWorks<br>
-                3D CAD Modelling<br>
-                Engineering Design<br>
-                Mechanical Troubleshooting
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <h3>Electronics & Hardware</h3>
-
-            <p>
-                Circuit Analysis<br>
-                Digital Logic Design<br>
-                FPGA Development<br>
-                System Integration
-            </p>
-
-        </div>
-
-
-        <div class="skill-card">
-
-            <h3>Software & Tools</h3>
-
-            <p>
-                Quartus Prime<br>
-                ModelSim<br>
-                GitHub<br>
-                Microsoft Excel
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==============================
-     ABOUT
-============================== -->
-
-<section id="about">
-
-    <div class="section-label">BACKGROUND</div>
-
-    <h2 class="section-title">About Me</h2>
-
-    <div class="about-content">
-
-        <p>
-            I am currently pursuing a Bachelor of Applied
-            Science in Engineering Science at Simon Fraser
-            University. My academic interests include
-            electrical systems, mechanical design,
-            electronics and engineering development.
-        </p>
-
-        <br>
-
-        <p>
-            Through coursework and personal projects,
-            I have gained practical experience in
-            programming, circuit development, digital
-            systems and mechanical troubleshooting.
-            I enjoy learning new technologies and
-            applying theoretical concepts to real-world
-            engineering challenges.
-        </p>
-
-        <div class="education">
-
-            <h3>Education</h3>
-
-            <p>
-                Simon Fraser University<br>
-                Bachelor of Applied Science<br>
-                Engineering Science<br>
-                September 2024 – June 2029
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ==============================
-     RESUME
-============================== -->
-
-<section id="resume">
-
-    <div class="section-label">DOCUMENTATION</div>
-
-    <h2 class="section-title">Resume</h2>
-
-    <div class="resume-box">
-
-        <p>
-            Interested in learning more about my
-            engineering background, technical skills
-            and professional experience?
-        </p>
-
-        <a href="documents/resume.pdf"
-           class="btn primary"
-           target="_blank">
-            Download Resume
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ==============================
-     CONTACT
-============================== -->
-
-<section id="contact">
-
-    <div class="section-label">GET IN TOUCH</div>
-
-    <h2 class="section-title">Contact</h2>
-
-    <div class="contact-content">
-
-        <p>
-            I am interested in engineering opportunities,
-            technical projects and professional development.
-        </p>
-
-        <p>
-            Email:
-            <a href="mailto:ika35@sfu.ca">
-                ika35@sfu.ca
-            </a>
-        </p>
-
-        <p>
-            LinkedIn:
-            <a href="https://linkedin.com/in/iziakkwan/">
-                linkedin.com/in/iziakkwan
-            </a>
-        </p>
-
-        <p>
-            GitHub:
-            <a href="https://github.com/iziakkwan">
-                github.com/iziakkwan
-            </a>
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- ==============================
-     FOOTER
-============================== -->
 
 <footer>
 
-    <p>
-        © 2026 Iziak Kwan | Engineering Portfolio
-    </p>
+    <p>© 2026 IZIAK KWAN</p>
+
+    <a href="#">Back to top ↑</a>
 
 </footer>
-
-
-<!-- ==============================
-     FEATURED PROJECT CAROUSEL
-============================== -->
-
-<script>
-
-// ADD YOUR FUTURE SOLIDWORKS PROJECTS HERE.
-
-const featuredProjects = [
-
-    {
-        title: "Differential Gearbox",
-
-        category: "MECHANICAL ASSEMBLY",
-
-        description:
-            "Designed and assembled a multi-component differential gearbox using SolidWorks. Focused on 3D CAD modelling, component alignment, assembly relationships and mechanical design.",
-
-        image: "images/solidworks-model.png",
-
-        tags: "SolidWorks | 3D CAD | Mechanical Design",
-
-        link: "projects/differential-gearbox/index.html"
-    }
-
-    // FUTURE PROJECT TEMPLATE:
-    //
-    // ,{
-    //     title: "Four-Cylinder Engine",
-    //
-    //     category: "MECHANICAL DESIGN",
-    //
-    //     description:
-    //         "Developed a detailed four-cylinder engine assembly using SolidWorks.",
-    //
-    //     image: "images/four-cylinder-engine.png",
-    //
-    //     tags: "SolidWorks | Engine Design | Assembly",
-    //
-    //     link: "projects/four-cylinder-engine/index.html"
-    // }
-
-];
-
-let featuredIndex = 0;
-
-const featuredImage = document.getElementById("featured-image");
-const featuredTitle = document.getElementById("featured-title");
-const featuredCategory = document.getElementById("featured-category");
-const featuredDescription = document.getElementById("featured-description");
-const featuredTags = document.getElementById("featured-tags");
-const featuredLink = document.getElementById("featured-link");
-const featuredCounter = document.getElementById("featured-counter");
-
-const featuredPrev = document.getElementById("featured-prev");
-const featuredNext = document.getElementById("featured-next");
-
-function showFeaturedProject(index) {
-
-    const project = featuredProjects[index];
-
-    featuredImage.src = project.image;
-    featuredImage.alt = project.title;
-
-    featuredTitle.textContent = project.title;
-    featuredCategory.textContent = project.category;
-    featuredDescription.textContent = project.description;
-    featuredTags.textContent = project.tags;
-
-    featuredLink.href = project.link;
-
-    featuredCounter.textContent =
-        `${index + 1} / ${featuredProjects.length}`;
-
-    featuredPrev.disabled = featuredProjects.length <= 1;
-    featuredNext.disabled = featuredProjects.length <= 1;
-}
-
-function nextFeaturedProject() {
-
-    featuredIndex =
-        (featuredIndex + 1) % featuredProjects.length;
-
-    showFeaturedProject(featuredIndex);
-}
-
-function previousFeaturedProject() {
-
-    featuredIndex =
-        (featuredIndex - 1 + featuredProjects.length)
-        % featuredProjects.length;
-
-    showFeaturedProject(featuredIndex);
-}
-
-featuredNext.addEventListener("click", nextFeaturedProject);
-featuredPrev.addEventListener("click", previousFeaturedProject);
-
-
-// AUTOMATIC ROTATION
-
-let featuredTimer = null;
-
-function startFeaturedTimer() {
-
-    clearInterval(featuredTimer);
-
-    if (featuredProjects.length > 1) {
-
-        featuredTimer = setInterval(
-            nextFeaturedProject,
-            5000
-        );
-
-    }
-
-}
-
-featuredNext.addEventListener("click", startFeaturedTimer);
-featuredPrev.addEventListener("click", startFeaturedTimer);
-
-
-// INITIALIZE CAROUSEL
-
-showFeaturedProject(featuredIndex);
-startFeaturedTimer();
-
-</script>
 
 </body>
 </html>
