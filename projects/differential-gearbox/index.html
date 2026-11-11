@@ -11,135 +11,469 @@
     <link rel="stylesheet" href="../../style.css">
 
     <style>
+
         /* PROJECT PAGE */
 
         .project-detail {
             width: 100%;
-            max-width: 1400px;
+            max-width: 1500px;
             margin: 0 auto;
-            padding: 70px 7%;
+            padding: 70px 8%;
         }
 
         .back-link {
             display: inline-block;
             color: #38bdf8;
-            margin-bottom: 40px;
+            font-size: 13px;
+            margin-bottom: 45px;
         }
 
         .project-detail h1 {
-            font-size: clamp(38px, 5vw, 60px);
+            font-size: clamp(40px, 5vw, 64px);
             line-height: 1.15;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
         }
 
         .project-intro {
-            max-width: 750px;
+            max-width: 800px;
             color: #94a3b8;
-            line-height: 1.8;
-            margin-bottom: 55px;
+            line-height: 1.9;
+            font-size: 15px;
+            margin-bottom: 45px;
         }
 
-        .project-detail h2 {
-            font-size: 23px;
-            margin: 45px 0 20px;
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 45px;
+            padding: 25px 0;
+            margin-bottom: 45px;
+            border-top: 1px solid #263449;
+            border-bottom: 1px solid #263449;
         }
 
-        .project-detail img {
+        .meta-item strong {
+            display: block;
+            font-size: 12px;
+            color: #38bdf8;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .meta-item span {
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+
+        .project-section {
+            margin-top: 75px;
+        }
+
+        .project-section h2 {
+            font-size: 27px;
+            margin-bottom: 20px;
+        }
+
+        .project-section h3 {
+            font-size: 18px;
+            margin: 30px 0 10px;
+        }
+
+        .project-section p {
+            max-width: 900px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 18px;
+        }
+
+        .project-section img {
             display: block;
             width: 100%;
-            max-height: 750px;
+            height: auto;
+            max-height: 950px;
             object-fit: contain;
             background: #14243a;
             border: 1px solid #263449;
             border-radius: 8px;
-            margin-bottom: 45px;
+            margin: 30px 0;
+        }
+
+        .project-image-caption {
+            color: #64748b;
+            font-size: 12px;
+            margin-top: -20px;
+            margin-bottom: 30px;
+        }
+
+        .project-list {
+            padding-left: 22px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 2;
         }
 
         .downloads {
             display: flex;
             flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 20px;
+            gap: 15px;
+            margin-top: 25px;
         }
 
         .downloads a {
+            display: inline-block;
+            border: 1px solid #263449;
+            border-radius: 5px;
+            padding: 12px 18px;
             color: #38bdf8;
+            font-size: 13px;
+            transition: 0.2s ease;
         }
 
         .downloads a:hover {
-            text-decoration: underline;
+            background: #14243a;
+            border-color: #38bdf8;
+        }
+
+        .project-end {
+            margin-top: 90px;
+            padding-top: 30px;
+            border-top: 1px solid #263449;
         }
 
         @media (max-width: 600px) {
+
             .project-detail {
                 padding: 45px 7%;
             }
+
+            .project-meta {
+                gap: 25px;
+            }
+
+            .project-section {
+                margin-top: 55px;
+            }
+
+            .project-section h2 {
+                font-size: 23px;
+            }
+
         }
+
     </style>
+
 </head>
 
 <body>
 
 <header>
+
     <nav class="navbar">
-        <a href="../../index.html" class="logo">IZIAK KWAN.</a>
+
+        <a href="../../index.html" class="logo">
+            IZIAK KWAN.
+        </a>
 
         <div class="nav-links">
+
             <a href="../../index.html#projects">Projects</a>
+
             <a href="../../index.html#about">About</a>
-            <a href="../../documents/resume.pdf" target="_blank">Resume ↗</a>
+
+            <a href="../../documents/resume.pdf" target="_blank">
+                Resume ↗
+            </a>
+
         </div>
+
     </nav>
+
 </header>
 
+
 <main class="project-detail">
+
+    <!-- BACK TO PROJECTS -->
 
     <a href="../../index.html#projects" class="back-link">
         ← Back to projects
     </a>
 
-    <p class="eyebrow">MECHANICAL DESIGN · SOLIDWORKS</p>
+
+    <!-- PROJECT INTRODUCTION -->
+
+    <p class="eyebrow">
+        MECHANICAL DESIGN · SOLIDWORKS
+    </p>
 
     <h1>Differential Gearbox</h1>
 
     <p class="project-intro">
-        A mechanical differential gearbox assembly designed
-        and modelled in SolidWorks. This project demonstrates
-        3D CAD modelling, component design and mechanical
-        assembly.
+
+        This project involved the 3D CAD modelling and assembly
+        of a mechanical differential gearbox using SolidWorks.
+
+        The assembly consists of multiple mechanical components
+        arranged into a complete gearbox mechanism. The project
+        focuses on individual part modelling, component alignment,
+        assembly relationships and the overall organization of
+        a mechanical system.
+
     </p>
 
-    <h2>Final Assembly</h2>
 
-    <img
-        src="final-render.PNG"
-        alt="Differential gearbox final assembly">
+    <!-- PROJECT INFORMATION -->
 
-    <h2>Exploded View</h2>
+    <div class="project-meta">
 
-    <img
-        src="exploded-view.PNG"
-        alt="Differential gearbox exploded view">
+        <div class="meta-item">
+            <strong>PROJECT</strong>
+            <span>Differential Gearbox</span>
+        </div>
 
-    <h2>Project Files</h2>
+        <div class="meta-item">
+            <strong>SOFTWARE</strong>
+            <span>SolidWorks</span>
+        </div>
 
-    <div class="downloads">
+        <div class="meta-item">
+            <strong>PROJECT TYPE</strong>
+            <span>Mechanical Assembly</span>
+        </div>
 
-        <a href="assembly.STEP" download>
-            Download STEP Model ↗
-        </a>
+        <div class="meta-item">
+            <strong>FOCUS</strong>
+            <span>3D CAD · Assembly Design</span>
+        </div>
 
-        <a href="CAD-files.zip" download>
-            Download SolidWorks Files ↗
+    </div>
+
+
+    <!-- FINAL ASSEMBLY -->
+
+    <section class="project-section">
+
+        <h2>01. Final Assembly</h2>
+
+        <p>
+
+            The completed assembly brings together the individual
+            components into one mechanical system. Particular
+            attention was given to the positioning and alignment
+            of the shafts, housing and internal components.
+
+            The final model provides an overall representation
+            of how the components fit together.
+
+        </p>
+
+        <img
+            src="final-render.PNG"
+            alt="Completed differential gearbox assembly">
+
+        <div class="project-image-caption">
+            Final differential gearbox assembly modelled in SolidWorks.
+        </div>
+
+    </section>
+
+
+    <!-- DESIGN PROCESS -->
+
+    <section class="project-section">
+
+        <h2>02. Modelling Process</h2>
+
+        <p>
+
+            The modelling process involved creating the individual
+            components required for the gearbox before combining
+            them into the complete assembly.
+
+            Each component had to be modelled with consideration
+            for its geometry, position and relationship with the
+            surrounding parts.
+
+        </p>
+
+        <h3>Individual Component Design</h3>
+
+        <p>
+
+            The assembly required multiple components with different
+            shapes and functions. These parts were developed as
+            individual CAD models before being brought together
+            within the main assembly.
+
+            Modelling the components separately helped organize
+            the design and made it easier to manage the overall
+            assembly structure.
+
+        </p>
+
+        <h3>Assembly Development</h3>
+
+        <p>
+
+            After creating the individual components, the parts
+            were inserted into the main assembly. Their positions
+            and orientations were adjusted to establish the
+            intended mechanical arrangement.
+
+            Assembly relationships were used to position the
+            components relative to one another.
+
+        </p>
+
+    </section>
+
+
+    <!-- EXPLODED VIEW -->
+
+    <section class="project-section">
+
+        <h2>03. Exploded Assembly</h2>
+
+        <p>
+
+            The exploded view separates the components to make
+            the assembly structure easier to understand.
+
+            It provides a clearer view of how the individual
+            components are arranged and how they relate to the
+            complete gearbox.
+
+        </p>
+
+        <img
+            src="exploded-view.PNG"
+            alt="Exploded view of differential gearbox">
+
+        <div class="project-image-caption">
+            Exploded assembly view showing the individual components.
+        </div>
+
+    </section>
+
+
+    <!-- CHALLENGES -->
+
+    <section class="project-section">
+
+        <h2>04. Design Challenges & Problem Solving</h2>
+
+        <h3>Component Alignment</h3>
+
+        <p>
+
+            One important consideration in developing a mechanical
+            assembly is ensuring that the components are positioned
+            correctly relative to one another.
+
+            The shafts, internal components and housing need to
+            maintain their intended alignment for the assembly
+            to represent a coherent mechanical system.
+
+        </p>
+
+        <h3>Managing Assembly Relationships</h3>
+
+        <p>
+
+            Another important part of the process was organizing
+            the relationships between individual components.
+
+            Correct positioning and assembly constraints are
+            important when working with a multi-component
+            mechanical design. This requires understanding how
+            different parts interact within the overall assembly.
+
+        </p>
+
+        <h3>Areas for Further Development</h3>
+
+        <p>
+
+            Further development could include checking component
+            clearances, evaluating possible interference, refining
+            the engineering drawings and studying the motion
+            of the gearbox mechanism.
+
+        </p>
+
+    </section>
+
+
+    <!-- WHAT I LEARNED -->
+
+    <section class="project-section">
+
+        <h2>05. What I Learned</h2>
+
+        <p>
+
+            This project helped develop my understanding of
+            mechanical assembly design and the workflow involved
+            in building a multi-component CAD model.
+
+            It provided experience in organizing individual
+            components, positioning parts within an assembly
+            and presenting a mechanical system through both
+            complete and exploded views.
+
+            It also reinforced the importance of planning
+            component geometry and assembly relationships
+            when developing mechanical designs.
+
+        </p>
+
+    </section>
+
+
+    <!-- DOWNLOADS -->
+
+    <section class="project-section">
+
+        <h2>06. Project Files</h2>
+
+        <p>
+            Download the CAD exports and original SolidWorks
+            assembly files below.
+        </p>
+
+        <div class="downloads">
+
+            <a href="assembly.STEP" download>
+                Download STEP Model ↗
+            </a>
+
+            <a href="CAD-files.zip" download>
+                Download SolidWorks Files ↗
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <div class="project-end">
+
+        <a href="../../index.html#projects" class="back-link">
+            ← Back to all projects
         </a>
 
     </div>
 
 </main>
 
+
 <footer>
+
     <p>© 2026 IZIAK KWAN</p>
+
     <a href="../../index.html">Back to home ↑</a>
+
 </footer>
 
 </body>
