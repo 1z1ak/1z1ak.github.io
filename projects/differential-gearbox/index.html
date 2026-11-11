@@ -103,12 +103,16 @@
 
         /* EXPLODED VIEW IMAGE FIX */
 
-        .exploded-view-image {
-            max-height: none !important;
-            height: auto;
-            width: 100%;
-            object-fit: contain;
-        }
+.exploded-view-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: none;
+    object-fit: contain;
+    object-position: center;
+    margin: 30px auto;
+}
 
         /* MOTION STUDY VIDEO */
 
