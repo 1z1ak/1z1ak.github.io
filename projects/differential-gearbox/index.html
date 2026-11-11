@@ -1,61 +1,78 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Differential Gearbox | IZIAK KWAN</title>
+
     <link rel="stylesheet" href="../../style.css">
 
     <style>
+        /* PROJECT PAGE */
+
         .project-detail {
-            max-width: 1100px;
+            width: 100%;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 80px 9%;
+            padding: 70px 7%;
         }
 
         .back-link {
-            color: #38bdf8;
-            text-decoration: none;
             display: inline-block;
+            color: #38bdf8;
             margin-bottom: 40px;
         }
 
         .project-detail h1 {
-            font-size: clamp(36px, 5vw, 58px);
-            margin-bottom: 15px;
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.15;
+            margin-bottom: 18px;
         }
 
         .project-intro {
+            max-width: 750px;
             color: #94a3b8;
             line-height: 1.8;
-            max-width: 700px;
-            margin-bottom: 45px;
-        }
-
-        .project-detail img {
-            width: 100%;
-            border-radius: 10px;
-            margin: 20px 0 45px;
+            margin-bottom: 55px;
         }
 
         .project-detail h2 {
-            margin: 35px 0 15px;
+            font-size: 23px;
+            margin: 45px 0 20px;
         }
 
-        .project-detail p {
-            color: #94a3b8;
-            line-height: 1.8;
+        .project-detail img {
+            display: block;
+            width: 100%;
+            max-height: 750px;
+            object-fit: contain;
+            background: #14243a;
+            border: 1px solid #263449;
+            border-radius: 8px;
+            margin-bottom: 45px;
+        }
+
+        .downloads {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 20px;
         }
 
         .downloads a {
-            display: inline-block;
             color: #38bdf8;
-            margin: 12px 20px 0 0;
+        }
+
+        .downloads a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
             .project-detail {
-                padding: 55px 7%;
+                padding: 45px 7%;
             }
         }
     </style>
@@ -66,6 +83,7 @@
 <header>
     <nav class="navbar">
         <a href="../../index.html" class="logo">IZIAK KWAN.</a>
+
         <div class="nav-links">
             <a href="../../index.html#projects">Projects</a>
             <a href="../../index.html#about">About</a>
@@ -85,22 +103,36 @@
     <h1>Differential Gearbox</h1>
 
     <p class="project-intro">
-        A mechanical assembly modelled in SolidWorks.
-        This project explores gearbox component design,
-        mechanical assembly and the arrangement of
-        internal gear mechanisms.
+        A mechanical differential gearbox assembly designed
+        and modelled in SolidWorks. This project demonstrates
+        3D CAD modelling, component design and mechanical
+        assembly.
     </p>
 
     <h2>Final Assembly</h2>
-    <img src="final-render.PNG" alt="Differential gearbox final assembly">
+
+    <img
+        src="final-render.PNG"
+        alt="Differential gearbox final assembly">
 
     <h2>Exploded View</h2>
-    <img src="exploded-view.PNG" alt="Differential gearbox exploded view">
+
+    <img
+        src="exploded-view.PNG"
+        alt="Differential gearbox exploded view">
 
     <h2>Project Files</h2>
+
     <div class="downloads">
-        <a href="assembly.STEP" download>Download STEP Model ↗</a>
-        <a href="CAD-files.zip" download>Download SolidWorks Files ↗</a>
+
+        <a href="assembly.STEP" download>
+            Download STEP Model ↗
+        </a>
+
+        <a href="CAD-files.zip" download>
+            Download SolidWorks Files ↗
+        </a>
+
     </div>
 
 </main>
