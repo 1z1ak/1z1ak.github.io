@@ -1,4 +1,7 @@
-/* GENERAL */
+
+/* ==============================
+   GENERAL
+============================== */
 
 * {
     margin: 0;
@@ -10,8 +13,15 @@ html {
     scroll-behavior: smooth;
 }
 
+:root {
+    --blue: #38bdf8;
+    --muted: #94a3b8;
+    --border: #263449;
+    --background: #0b1120;
+}
+
 body {
-    background: #0b1120;
+    background: var(--background);
     color: #f1f5f9;
     font-family: Arial, sans-serif;
     line-height: 1.7;
@@ -22,14 +32,9 @@ a {
     text-decoration: none;
 }
 
-:root {
-    --blue: #38bdf8;
-    --muted: #94a3b8;
-    --border: #263449;
-}
-
-
-/* NAVIGATION */
+/* ==============================
+   NAVIGATION
+============================== */
 
 .navbar {
     display: flex;
@@ -43,10 +48,6 @@ a {
     font-size: 23px;
     font-weight: bold;
     letter-spacing: 2px;
-}
-
-.logo::after {
-    content: "";
 }
 
 .nav-links {
@@ -63,8 +64,9 @@ a {
     color: var(--blue);
 }
 
-
-/* INTRODUCTION */
+/* ==============================
+   HERO
+============================== */
 
 .hero {
     min-height: 570px;
@@ -120,8 +122,9 @@ a {
     object-fit: contain;
 }
 
-
-/* SECTIONS */
+/* ==============================
+   SECTIONS
+============================== */
 
 .section {
     padding: 85px 9%;
@@ -149,47 +152,59 @@ a {
     font-size: 14px;
 }
 
-
-/* PROJECTS */
+/* ==============================
+   PROJECT GALLERY
+============================== */
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    align-items: start;
 }
 
-.project-placeholder {
-    height: 220px;
-    background: linear-gradient(
-        135deg,
-        #192e47,
-        #111d2e
-    );
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
+.project-card {
+    display: block;
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
+    background: #14243a;
+    border: 1px solid var(--border);
+    border-radius: 8px;
     margin-bottom: 18px;
+    padding: 12px;
 }
 
-.project-placeholder span {
-    font-size: 45px;
-    color: var(--blue);
-    opacity: 0.7;
+.project-card .project-placeholder {
+    display: none;
 }
 
 .project-card h3 {
     font-size: 17px;
     font-weight: 500;
+    color: #f1f5f9;
 }
 
 .project-card p {
     margin-top: 5px;
-    font-size: 12px;
+    font-size: 13px;
 }
 
-
-/* SKILLS */
+/* ==============================
+   SKILLS
+============================== */
 
 .skills {
     background: #0d1727;
@@ -210,9 +225,9 @@ a {
     color: #cbd5e1;
 }
 
-
-
-/* ABOUT */
+/* ==============================
+   ABOUT
+============================== */
 
 .about {
     max-width: 100%;
@@ -248,14 +263,9 @@ a {
     color: var(--blue);
 }
 
-@media (max-width: 550px) {
-    .about {
-        padding: 60px 7%;
-    }
-}
-
-
-/* CONTACT */
+/* ==============================
+   CONTACT
+============================== */
 
 .contact {
     text-align: center;
@@ -277,8 +287,9 @@ a {
     font-size: 14px;
 }
 
-
-/* FOOTER */
+/* ==============================
+   FOOTER
+============================== */
 
 footer {
     padding: 25px 9%;
@@ -289,28 +300,22 @@ footer {
     font-size: 12px;
 }
 
-
-/* MOBILE */
+/* ==============================
+   MOBILE
+============================== */
 
 @media (max-width: 800px) {
-
     .hero {
         grid-template-columns: 1fr;
         padding: 65px 7%;
     }
 
     .project-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
-    .about {
-        grid-template-columns: 1fr;
-    }
-
 }
 
 @media (max-width: 550px) {
-
     .navbar {
         flex-direction: column;
         gap: 15px;
@@ -337,36 +342,7 @@ footer {
         font-size: 43px;
     }
 
-}
-
-/* PROJECT CARDS */
-
-.project-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.25s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-}
-
-.project-card img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border: 1px solid #263449;
-    border-radius: 8px;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.project-card h3 {
-    color: #f8fafc;
-    margin-bottom: 8px;
-}
-
-.project-card p {
-    color: #94a3b8;
+    .about {
+        padding: 60px 7%;
+    }
 }
