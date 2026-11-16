@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,7 +65,7 @@
         }
 
         .project-section {
-            margin-top: 70px;
+            margin-top: 65px;
         }
 
         .project-section h2 {
@@ -75,7 +75,7 @@
 
         .project-section h3 {
             font-size: 18px;
-            margin: 30px 0 10px;
+            margin: 25px 0 10px;
         }
 
         /* IMAGE GALLERY */
@@ -89,12 +89,13 @@
 
         .project-gallery figure {
             margin: 0;
+            min-width: 0;
         }
 
         .project-gallery img {
             display: block;
             width: 100%;
-            height: 300px;
+            height: 280px;
             object-fit: contain;
             background: #14243a;
             border: 1px solid var(--border);
@@ -108,14 +109,18 @@
             margin-top: 10px;
         }
 
-        /* GENERAL VIDEO */
+        /* FEATURE IMAGE */
 
-        .project-video {
+        .feature-image {
+            margin-top: 28px;
+        }
+
+        .feature-image img {
             display: block;
             width: 100%;
-            max-height: 650px;
-            margin-top: 22px;
-            background: #000;
+            max-height: 440px;
+            object-fit: contain;
+            background: #14243a;
             border: 1px solid var(--border);
             border-radius: 8px;
         }
@@ -147,7 +152,16 @@
 
         .video-grid figcaption {
             margin-top: 10px;
-            line-height: 1.6;
+        }
+
+        .project-video {
+            display: block;
+            width: 100%;
+            max-height: 600px;
+            margin-top: 22px;
+            background: #000;
+            border: 1px solid var(--border);
+            border-radius: 8px;
         }
 
         /* CONTENT BOXES */
@@ -167,6 +181,10 @@
         .design-box p,
         .challenge-box p {
             margin-bottom: 0;
+        }
+
+        .design-box h3 {
+            margin-top: 0;
         }
 
         .project-list {
@@ -383,12 +401,9 @@
             assembling the prototype.
         </p>
 
-        <figure style="margin-top:28px;">
+        <figure class="feature-image">
             <img src="design.png"
-                 alt="Initial design model of the automated salter"
-                 style="width:100%; max-height:520px; object-fit:contain;
-                 background:#14243a; border:1px solid var(--border);
-                 border-radius:8px;">
+                 alt="Initial design model of the automated salter">
 
             <figcaption>
                 Initial design model developed for the automated salter.
@@ -451,10 +466,10 @@
         </div>
     </section>
 
-    <!-- 03 SYSTEM DESIGN -->
+    <!-- 03 SYSTEM DESIGN, ELECTRONICS & SAFETY -->
 
     <section class="project-section">
-        <h2>03. Proposed System Design</h2>
+        <h2>03. System Design, Electronics & Safety</h2>
 
         <p>
             Beyond the physical structure, the project required
@@ -505,31 +520,25 @@
             <li>Control of the salt dispensing motor.</li>
             <li>Remote-control override through a mobile application.</li>
         </ul>
-    </section>
-
-    <!-- 04 SAFETY & EMERGENCY STOP -->
-
-    <section class="project-section">
-        <h2>04. Safety Design & Emergency Stop</h2>
-
-        <p>
-            Safety was an important consideration when designing
-            the automated salter. Since the machine was intended
-            to move autonomously using powered motors, we needed
-            a way to stop its operation immediately if something
-            went wrong.
-        </p>
-
-        <p>
-            To address this, we implemented an emergency stop
-            button and positioned it in an easily accessible
-            location on the salter. This allowed the operator
-            to quickly reach the button and stop the machine
-            if it malfunctioned or behaved unexpectedly.
-        </p>
 
         <div class="design-box">
-            <h3>Emergency Stop Implementation</h3>
+            <h3>Safety & Emergency Stop</h3>
+
+            <p>
+                Safety was an important consideration when designing
+                the automated salter. Since the machine was intended
+                to move autonomously using powered motors, we needed
+                a way to stop its operation immediately if something
+                went wrong.
+            </p>
+
+            <p>
+                To address this, we implemented an emergency stop
+                button and positioned it in an easily accessible
+                location on the salter. This allowed the operator
+                to quickly reach the button and stop the machine
+                if it malfunctioned or behaved unexpectedly.
+            </p>
 
             <p>
                 The emergency stop was incorporated into the
@@ -549,14 +558,12 @@
             design process helped make the prototype more
             practical to operate.
         </p>
-
-       
     </section>
 
-    <!-- 05 CHALLENGES -->
+    <!-- 04 CHALLENGES -->
 
     <section class="project-section">
-        <h2>05. Engineering Challenges & Solutions</h2>
+        <h2>04. Engineering Challenges & Solutions</h2>
 
         <p>
             Throughout the project, several challenges had to
@@ -642,10 +649,10 @@
         </div>
     </section>
 
-    <!-- 06 CONSTRUCTION -->
+    <!-- 05 CONSTRUCTION -->
 
     <section class="project-section">
-        <h2>06. Physical Construction & Assembly</h2>
+        <h2>05. Physical Construction & Assembly</h2>
 
         <p>
             Once the design work was completed, I helped with
@@ -663,13 +670,9 @@
             actually be built.
         </p>
 
-        <figure style="margin-top:28px;">
+        <figure class="feature-image">
             <img src="final-build.jpg"
-                 alt="Completed automated salter prototype"
-                 style="display:block; width:100%; max-height:520px;
-                 object-fit:contain; background:#14243a;
-                 border:1px solid var(--border);
-                 border-radius:8px;">
+                 alt="Completed automated salter prototype">
 
             <figcaption>
                 Completed physical build of the automated salter.
@@ -677,10 +680,10 @@
         </figure>
     </section>
 
-    <!-- 07 TESTING -->
+    <!-- 06 TESTING -->
 
     <section class="project-section">
-        <h2>07. Prototype Movement & Testing</h2>
+        <h2>06. Prototype Movement & Testing</h2>
 
         <p>
             The following clips show the physical prototype
@@ -696,9 +699,7 @@
                     <source src="movement-1.mov" type="video/quicktime">
                 </video>
 
-                <figcaption>
-                    Prototype movement clip 01.
-                </figcaption>
+                <figcaption>Prototype movement clip 01.</figcaption>
             </figure>
 
             <figure>
@@ -707,9 +708,7 @@
                     <source src="movement-2.mov" type="video/quicktime">
                 </video>
 
-                <figcaption>
-                    Prototype movement clip 02.
-                </figcaption>
+                <figcaption>Prototype movement clip 02.</figcaption>
             </figure>
 
             <figure>
@@ -718,9 +717,7 @@
                     <source src="movement-3.mov" type="video/quicktime">
                 </video>
 
-                <figcaption>
-                    Prototype movement clip 03.
-                </figcaption>
+                <figcaption>Prototype movement clip 03.</figcaption>
             </figure>
 
             <figure>
@@ -729,18 +726,16 @@
                     <source src="movement-5.mov" type="video/quicktime">
                 </video>
 
-                <figcaption>
-                    Additional prototype footage.
-                </figcaption>
+                <figcaption>Additional prototype footage.</figcaption>
             </figure>
 
         </div>
     </section>
 
-    <!-- 08 FINAL PRESENTATION -->
+    <!-- 07 FINAL PRESENTATION -->
 
     <section class="project-section">
-        <h2>08. Final Project Presentation</h2>
+        <h2>07. Final Project Presentation</h2>
 
         <p>
             The final video below is the presentation prepared
@@ -759,10 +754,10 @@
         </figcaption>
     </section>
 
-    <!-- 09 REFLECTION -->
+    <!-- 08 REFLECTION -->
 
     <section class="project-section">
-        <h2>09. Reflection & Takeaways</h2>
+        <h2>08. Reflection & Takeaways</h2>
 
         <p>
             This project gave me an early opportunity to experience
@@ -856,16 +851,12 @@
 
     closeButton.addEventListener("click", closeViewer);
 
-    // Click outside image to close
     lightbox.addEventListener("click", event => {
-
         if (event.target === lightbox) {
             closeViewer();
         }
-
     });
 
-    // Scroll wheel zoom
     lightbox.addEventListener("wheel", event => {
 
         if (!lightbox.classList.contains("active")) return;
@@ -873,23 +864,19 @@
         event.preventDefault();
 
         zoom += event.deltaY < 0 ? 0.2 : -0.2;
-
         zoom = Math.min(Math.max(zoom, 1), 5);
 
         lightboxImage.style.transform = `scale(${zoom})`;
 
     }, { passive: false });
 
-    // Double click to zoom
     lightboxImage.addEventListener("dblclick", () => {
 
         zoom = zoom === 1 ? 2 : 1;
-
         lightboxImage.style.transform = `scale(${zoom})`;
 
     });
 
-    // Escape key to close
     document.addEventListener("keydown", event => {
 
         if (event.key === "Escape") {
@@ -901,3 +888,4 @@
 
 </body>
 </html>
+```
