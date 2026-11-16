@@ -15,6 +15,29 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        /* HERO IMAGE SLIDESHOW */
+
+        .hero-image {
+            display: block;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img {
+            transition: opacity 0.4s ease, transform 0.3s ease;
+        }
+
+        .hero-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .hero-image .image-label {
+            pointer-events: none;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -109,24 +132,34 @@
         </div>
 
 
-        <div class="hero-image">
+        <!-- CLICKABLE HERO PROJECT SLIDESHOW -->
+
+        <a href="projects/differential-gearbox/"
+           class="hero-image"
+           id="hero-project-link">
 
             <img
-                src="images/hero-model.png"
-                alt="Mechanical CAD model designed in SolidWorks">
+                id="hero-project-image"
+                src="projects/differential-gearbox/thumbnail.PNG"
+                alt="Differential Gearbox SolidWorks model">
 
             <div class="image-label">
 
                 <span class="image-label-dot"></span>
 
                 <div>
-                    <strong>ENGINEERING DESIGN</strong>
-                    <p>CAD · MECHANICAL SYSTEMS</p>
+                    <strong id="hero-project-title">
+                        DIFFERENTIAL GEARBOX
+                    </strong>
+
+                    <p id="hero-project-category">
+                        CAD · MECHANICAL DESIGN
+                    </p>
                 </div>
 
             </div>
 
-        </div>
+        </a>
 
     </section>
 
@@ -557,6 +590,132 @@
     <a href="#">Back to top ↑</a>
 
 </footer>
+
+
+<!-- HERO PROJECT IMAGE SHUFFLE -->
+
+<script>
+
+const heroProjects = [
+
+    {
+        image: "projects/differential-gearbox/thumbnail.PNG",
+        title: "DIFFERENTIAL GEARBOX",
+        category: "CAD · MECHANICAL DESIGN",
+        link: "projects/differential-gearbox/"
+    },
+
+    {
+        image: "projects/automated-salter/thumbnail.jpg",
+        title: "AUTOMATED SALTER",
+        category: "PROTOTYPING · AUTOMATION",
+        link: "projects/automated-salter/"
+    },
+
+    {
+        image: "projects/am-radio/thumbnail.jpg",
+        title: "AM RADIO",
+        category: "CIRCUIT DESIGN · ELECTRONICS",
+        link: "projects/am-radio/"
+    }
+
+];
+
+
+const heroImage = document.getElementById("hero-project-image");
+
+const heroLink = document.getElementById("hero-project-link");
+
+const heroTitle = document.getElementById("hero-project-title");
+
+const heroCategory = document.getElementById("hero-project-category");
+
+
+let currentProject = 0;
+
+let isChanging = false;
+
+
+// Preload all project thumbnails
+
+heroProjects.forEach(project => {
+
+    const img = new Image();
+
+    img.src = project.image;
+
+});
+
+
+// Shuffle to a different project
+
+function shuffleHeroProjects() {
+
+    if (isChanging) return;
+
+    isChanging = true;
+
+    let nextProject;
+
+    // Make sure the next image is different
+
+    do {
+
+        nextProject = Math.floor(
+            Math.random() * heroProjects.length
+        );
+
+    } while (nextProject === currentProject);
+
+
+    currentProject = nextProject;
+
+    const project = heroProjects[currentProject];
+
+
+    // Fade out current image
+
+    heroImage.style.opacity = "0";
+
+
+    setTimeout(() => {
+
+        // Change project image
+
+        heroImage.src = project.image;
+
+        heroImage.alt = project.title;
+
+
+        // Update clickable destination
+
+        heroLink.href = project.link;
+
+
+        // Update project information
+
+        heroTitle.textContent = project.title;
+
+        heroCategory.textContent = project.category;
+
+
+        // Fade image back in
+
+        heroImage.style.opacity = "1";
+
+        isChanging = false;
+
+    }, 400);
+
+}
+
+
+// Shuffle automatically every 3 seconds
+
+setInterval(shuffleHeroProjects, 3000);
+
+
+</script>
 
 
 </body>
