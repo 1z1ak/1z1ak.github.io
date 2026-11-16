@@ -1,11 +1,12 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automated Salter | IZIAK KWAN</title>
+    <meta name="description" content="First-year engineering group project: designing and building an automated salter prototype.">
+
     <link rel="stylesheet" href="../../style.css">
 
     <style>
@@ -22,18 +23,20 @@
             font-size: 14px;
         }
 
-        .project-hero { max-width: 850px; }
+        .project-hero { max-width: 900px; }
 
         .project-hero h1 {
             font-size: clamp(40px, 5vw, 62px);
-            margin: 12px 0 20px;
+            line-height: 1.12;
+            margin: 12px 0 22px;
         }
 
-        .project-intro, .project-section p {
+        .project-intro,
+        .project-section p {
             color: var(--muted);
-            line-height: 1.9;
             font-size: 15px;
-            max-width: 850px;
+            line-height: 1.9;
+            max-width: 880px;
         }
 
         .project-meta {
@@ -59,7 +62,7 @@
             font-size: 14px;
         }
 
-        .project-section { margin-top: 65px; }
+        .project-section { margin-top: 70px; }
 
         .project-section h2 {
             font-size: 27px;
@@ -68,55 +71,112 @@
 
         .project-section h3 {
             font-size: 18px;
-            margin: 28px 0 10px;
+            margin: 30px 0 10px;
         }
 
         .project-gallery {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
-            margin-top: 25px;
+            gap: 22px;
+            margin-top: 28px;
         }
 
         .project-gallery figure { margin: 0; }
 
         .project-gallery img {
+            display: block;
             width: 100%;
             height: 300px;
             object-fit: contain;
             background: #14243a;
             border: 1px solid var(--border);
-            border-radius: 7px;
+            border-radius: 8px;
         }
 
         figcaption {
             color: var(--muted);
             font-size: 12px;
-            margin-top: 9px;
+            line-height: 1.6;
+            margin-top: 10px;
         }
 
         .project-video {
+            display: block;
             width: 100%;
             max-height: 650px;
-            margin-top: 20px;
+            margin-top: 22px;
             background: #000;
             border: 1px solid var(--border);
             border-radius: 8px;
         }
 
-        .contribution {
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .video-grid video {
+            width: 100%;
+            max-height: 360px;
+            background: #000;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .video-grid figure { margin: 0; }
+
+        .contribution-box,
+        .design-box,
+        .challenge-box {
+            background: rgba(56, 189, 248, 0.045);
+            border: 1px solid var(--border);
             border-left: 3px solid var(--blue);
-            background: rgba(56, 189, 248, 0.06);
+            border-radius: 6px;
             padding: 22px 25px;
             margin-top: 25px;
         }
 
-        .contribution p { margin-bottom: 0; }
+        .contribution-box p,
+        .design-box p,
+        .challenge-box p {
+            margin-bottom: 0;
+        }
+
+        .project-list {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.9;
+            padding-left: 22px;
+        }
+
+        .project-list li { margin-bottom: 8px; }
+
+        .challenge-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .challenge-item:last-child { border-bottom: none; }
+
+        .challenge-item h3 {
+            margin: 0 0 9px;
+        }
+
+        .challenge-item p { margin: 0; }
+
+        .project-end {
+            margin-top: 80px;
+            padding-top: 28px;
+            border-top: 1px solid var(--border);
+        }
 
         @media (max-width: 700px) {
             .project-detail { padding: 45px 7%; }
             .project-meta { grid-template-columns: 1fr 1fr; }
-            .project-gallery { grid-template-columns: 1fr; }
+            .project-gallery,
+            .video-grid { grid-template-columns: 1fr; }
             .project-gallery img { height: 250px; }
         }
     </style>
@@ -126,13 +186,17 @@
 
 <header>
     <nav class="navbar">
-        <a href="../../index.html" class="logo">IZIAK KWAN<span>.</span></a>
+        <a href="../../index.html" class="logo">
+            IZIAK KWAN<span>.</span>
+        </a>
 
         <div class="nav-links">
             <a href="../../index.html#projects">Projects</a>
             <a href="../../index.html#skills">Skills</a>
             <a href="../../index.html#about">About</a>
-            <a href="../../documents/resume.pdf" target="_blank" rel="noopener noreferrer"
+            <a href="../../documents/resume.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
                class="nav-resume">Resume ↗</a>
         </div>
     </nav>
@@ -144,182 +208,469 @@
         ← Back to all projects
     </a>
 
+    <!-- INTRODUCTION -->
+
     <section class="project-hero">
         <p class="section-eyebrow">MECHANICAL DESIGN · AUTOMATION</p>
+
         <h1>Automated Salter</h1>
 
         <p class="project-intro">
-            A first-year, first-semester group engineering project focused on
-            designing and building an automated salt-dispensing prototype.
-            My main contribution was developing the design model and then
-            helping bring the concept to life through hands-on construction
+            A first-year, first-semester group engineering project
+            focused on designing and building an automated salter.
+            The goal was to develop a prototype capable of moving
+            along a sidewalk and dispensing salt while accounting
+            for obstacles and the edge of the path.
+
+            My main contribution was developing the design model.
+            I then helped translate the design into a physical
+            prototype through hands-on construction, wood cutting
             and assembly.
         </p>
     </section>
 
+    <!-- PROJECT INFORMATION -->
+
     <div class="project-meta">
         <div>
             <strong>PROJECT TYPE</strong>
-            <span>Group Engineering Project</span>
+            <span>First-Year Group Project</span>
         </div>
+
         <div>
-            <strong>MY ROLE</strong>
-            <span>Design & Prototype Construction</span>
+            <strong>MY CONTRIBUTION</strong>
+            <span>Design & Construction</span>
         </div>
+
         <div>
-            <strong>PROJECT STAGE</strong>
-            <span>First Year · First Semester</span>
+            <strong>PROJECT FOCUS</strong>
+            <span>Mechanical Design & Automation</span>
         </div>
     </div>
+
+    <!-- 01 OVERVIEW -->
 
     <section class="project-section">
         <h2>01. Project Overview</h2>
 
         <p>
-            The goal of this project was to create an automated salter that
-            could distribute salt through a designed mechanical system.
-            As a first-year engineering project, it gave me the opportunity
-            to take part in both the design process and the physical
-            construction of a working prototype.
+            The project involved developing an automated machine
+            designed to distribute salt along a sidewalk. The
+            proposed system combined a mobile platform, a salt
+            dispensing mechanism and electronic controls.
+
+            In addition to designing the physical structure, the
+            project required consideration of how the machine
+            would move, detect its surroundings and control the
+            dispensing process.
         </p>
 
         <p>
-            The project required the group to consider the overall structure,
-            movement, salt-dispensing approach and control of the system.
-            My responsibility was to work on the design model and contribute
-            to turning the design into a physical build.
+            Working as part of a group, I was responsible for
+            developing the design model. After the design stage,
+            I also participated in physically building and
+            assembling the prototype.
         </p>
 
-        <figure>
-            <img src="design.jpg" alt="Automated salter design model"
+        <figure style="margin-top:28px;">
+            <img src="design.png"
+                 alt="Initial design model of the automated salter"
                  style="width:100%; max-height:520px; object-fit:contain;
                  background:#14243a; border:1px solid var(--border);
-                 border-radius:7px;">
-            <figcaption>My design model for the automated salter.</figcaption>
+                 border-radius:8px;">
+            <figcaption>
+                Initial design model developed for the automated salter.
+            </figcaption>
         </figure>
     </section>
 
+    <!-- 02 DESIGN PROCESS -->
+
     <section class="project-section">
-        <h2>02. Design Process</h2>
+        <h2>02. Design & Modelling Process</h2>
 
         <p>
-            I worked on developing the design model to plan the layout and
-            overall structure of the salter. This stage helped establish
-            how the different parts of the prototype would fit together
-            before construction began.
+            I started by developing a design model to establish
+            the overall structure and arrangement of the machine.
+            This allowed us to visualize the proposed system
+            before committing to the physical construction.
         </p>
 
         <p>
-            Creating the model also gave me a clearer idea of how the
-            design could be translated into a physical structure. The
-            design had to be practical to build, assemble and use as
-            part of the completed system.
+            As the project developed, the design was revised
+            to account for practical considerations and the
+            requirements of the prototype. This included
+            thinking about the frame, dimensions, placement
+            of components and how the different parts would
+            fit together.
         </p>
 
         <div class="project-gallery">
             <figure>
-                <img src="design-detail.jpg" alt="Detailed view of my salter design">
-                <figcaption>Design development and structural details.</figcaption>
+                <img src="design-revised.jpg"
+                     alt="Revised automated salter design">
+                <figcaption>
+                    Revised design after considering the project requirements.
+                </figcaption>
             </figure>
 
             <figure>
-                <img src="design-overview.jpg" alt="Overall design of the salter">
-                <figcaption>Overall layout of the proposed design.</figcaption>
-            </figure>
-        </div>
-    </section>
-
-    <section class="project-section">
-        <h2>03. Prototype Construction</h2>
-
-        <p>
-            After completing the design stage, I also helped with the
-            physical construction of the prototype. This involved
-            working with the materials, cutting the wood, assembling
-            the structure and helping fit the different parts together.
-        </p>
-
-        <p>
-            This part of the project gave me practical experience in
-            translating a design into a physical build. It also showed
-            me the importance of considering construction and assembly
-            when developing an engineering design.
-        </p>
-
-        <div class="project-gallery">
-            <figure>
-                <img src="construction.jpg" alt="Building the automated salter">
-                <figcaption>Hands-on construction of the prototype.</figcaption>
-            </figure>
-
-            <figure>
-                <img src="assembly.jpg" alt="Assembling the salter structure">
-                <figcaption>Assembling the structure and components.</figcaption>
+                <img src="design-dimensions.jpg"
+                     alt="Dimensions of the automated salter design">
+                <figcaption>
+                    Design dimensions used to plan the physical structure.
+                </figcaption>
             </figure>
         </div>
 
-        <div class="contribution">
+        <div class="contribution-box">
             <p>
-                <strong>My contribution:</strong> Design modelling,
-                preparing the design for construction, cutting wood,
-                building and assembling the physical prototype.
+                <strong>My contribution:</strong>
+                I developed the design model and worked on revising
+                the structure before construction. I then helped
+                turn the design into a physical prototype by
+                cutting wood, building the frame and assembling
+                the different parts.
             </p>
         </div>
     </section>
 
+    <!-- 03 SYSTEM DESIGN -->
+
     <section class="project-section">
-        <h2>04. Final Prototype & Demonstration</h2>
+        <h2>03. Proposed System Design</h2>
 
         <p>
-            The completed prototype brought together the design and
-            construction work completed throughout the project.
-            The video below shows the final build and its demonstration.
+            Beyond the physical structure, the project required
+            planning how the automated system would operate.
+            The proposed design combined mechanical, electronic
+            and software elements.
+        </p>
+
+        <div class="design-box">
+            <h3>Salt Dispensing Mechanism</h3>
+
+            <p>
+                The proposed dispensing approach used a spinning
+                disk positioned below the salt container. The
+                movement of the wheels was also considered as
+                part of the mechanism for opening the dispensing
+                hatch.
+            </p>
+        </div>
+
+        <h3>Electronics & Hardware</h3>
+
+        <p>
+            The initial electronics plan considered the following
+            components and requirements:
+        </p>
+
+        <ul class="project-list">
+            <li><strong>Microcontroller:</strong> Raspberry Pi 4 Model B.</li>
+            <li><strong>Drive motor:</strong> 12 V DC gear motor, 125 RPM.</li>
+            <li><strong>Power:</strong> A 15,000 mAh power bank was considered, with a separate motor battery still to be determined.</li>
+            <li><strong>Lighting:</strong> LED strip using SMD 5050 chips.</li>
+        </ul>
+
+        <h3>Software & Automation</h3>
+
+        <p>
+            The intended software functions included autonomous
+            movement, obstacle and cliff detection, control of
+            the salt dispenser motor and a mobile application
+            for remote-control override.
+        </p>
+
+        <ul class="project-list">
+            <li>Autonomous movement along the sidewalk.</li>
+            <li>Obstacle detection to respond to objects in the machine's path.</li>
+            <li>Cliff or edge detection to help prevent the machine from leaving the sidewalk.</li>
+            <li>Control of the salt dispensing motor.</li>
+            <li>Remote-control override through a mobile application.</li>
+        </ul>
+    </section>
+
+    <!-- 04 SAFETY -->
+
+    <section class="project-section">
+        <h2>04. Safety Considerations & Emergency Stop</h2>
+
+        <p>
+            One important consideration during the design process
+            was how the machine should respond if something went
+            wrong while operating autonomously.
+        </p>
+
+        <p>
+            Since the proposed salter involved powered motors and
+            autonomous movement, a malfunction could cause the
+            machine to continue moving or operating when it
+            should not. This raised the need for an emergency
+            stop function.
+        </p>
+
+        <div class="design-box">
+            <h3>Emergency Stop Concept</h3>
+
+            <p>
+                I recognized that the system should have a way
+                to immediately stop its operation if a malfunction
+                occurred or if the machine behaved unexpectedly.
+                An emergency stop would provide a direct way to
+                interrupt operation rather than relying only on
+                the autonomous software to correct the problem.
+            </p>
+        </div>
+
+        <p>
+            This was an important design consideration because
+            automation should not only perform its intended task;
+            it should also account for unexpected situations and
+            allow the operator to intervene.
+        </p>
+    </section>
+
+    <!-- 05 CHALLENGES -->
+
+    <section class="project-section">
+        <h2>05. Engineering Challenges & Solutions</h2>
+
+        <p>
+            Throughout the project, several challenges had to
+            be considered across the hardware, electronics and
+            software. Our approach involved researching options,
+            communicating between different areas of the project
+            and looking for practical solutions.
+        </p>
+
+        <div class="challenge-box">
+
+            <div class="challenge-item">
+                <h3>Hardware — Sourcing Components</h3>
+
+                <p>
+                    <strong>Challenge:</strong> Finding and purchasing
+                    the necessary hardware and materials for the
+                    prototype.
+
+                    <br><br>
+
+                    <strong>Approach:</strong> We considered visiting
+                    local hardware stores, such as Home Depot, and
+                    checking additional online suppliers to find
+                    suitable components.
+                </p>
+            </div>
+
+            <div class="challenge-item">
+                <h3>Electronics — Motor Power Requirements</h3>
+
+                <p>
+                    <strong>Challenge:</strong> Determining an
+                    appropriate battery and power setup for the
+                    motors. The power requirements of the motors
+                    had to be considered separately from the
+                    other electronics.
+
+                    <br><br>
+
+                    <strong>Approach:</strong> We researched the
+                    hardware requirements and communicated between
+                    the electronics and mechanical sides of the
+                    project to better understand the power needs.
+                </p>
+            </div>
+
+            <div class="challenge-item">
+                <h3>Software — Detecting the End of the Sidewalk</h3>
+
+                <p>
+                    <strong>Challenge:</strong> Developing a way
+                    for the salter to stop at the end of a sidewalk
+                    rather than continuing forward.
+
+                    <br><br>
+
+                    <strong>Approach:</strong> We considered combining
+                    sensor inputs to detect obstacles and sidewalk
+                    edges. This was intended to help the system
+                    recognize its surroundings and respond
+                    appropriately.
+                </p>
+            </div>
+
+            <div class="challenge-item">
+                <h3>Safety — Responding to Malfunctions</h3>
+
+                <p>
+                    <strong>Challenge:</strong> Considering what
+                    would happen if the machine malfunctioned
+                    during autonomous operation.
+
+                    <br><br>
+
+                    <strong>Approach:</strong> I identified the
+                    importance of including an emergency stop
+                    so the operator could interrupt the machine's
+                    operation if something went wrong.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 06 CONSTRUCTION -->
+
+    <section class="project-section">
+        <h2>06. Physical Construction & Assembly</h2>
+
+        <p>
+            Once the design work was completed, I helped with
+            the physical construction of the salter. This involved
+            working with the wood and other materials, cutting
+            pieces to size and assembling the structure.
+        </p>
+
+        <p>
+            Moving from the model to the physical prototype
+            required practical adjustments during construction.
+            This gave me experience with the hands-on side of
+            engineering design, where the proposed structure
+            had to be translated into something that could
+            actually be built.
+        </p>
+
+        <figure style="margin-top:28px;">
+            <img src="building-process.jpg"
+                 alt="Building and assembling the automated salter"
+                 style="width:100%; max-height:520px; object-fit:contain;
+                 background:#14243a; border:1px solid var(--border);
+                 border-radius:8px;">
+            <figcaption>
+                Physical construction and assembly of the prototype.
+            </figcaption>
+        </figure>
+
+        <figure style="margin-top:28px;">
+            <img src="final-build.jpg"
+                 alt="Completed automated salter prototype"
+                 style="width:100%; max-height:520px; object-fit:contain;
+                 background:#14243a; border:1px solid var(--border);
+                 border-radius:8px;">
+            <figcaption>
+                Completed physical build of the automated salter.
+            </figcaption>
+        </figure>
+    </section>
+
+    <!-- 07 TESTING -->
+
+    <section class="project-section">
+        <h2>07. Prototype Movement & Testing</h2>
+
+        <p>
+            The following clips show the physical prototype
+            during movement and testing. They provide a closer
+            look at the machine beyond the final presentation.
+        </p>
+
+        <div class="video-grid">
+
+            <figure>
+                <video controls preload="metadata">
+                    <source src="movement-1.mp4" type="video/mp4">
+                    <source src="movement-1.mov" type="video/quicktime">
+                </video>
+                <figcaption>Prototype movement clip 01.</figcaption>
+            </figure>
+
+            <figure>
+                <video controls preload="metadata">
+                    <source src="movement-2.mp4" type="video/mp4">
+                    <source src="movement-2.mov" type="video/quicktime">
+                </video>
+                <figcaption>Prototype movement clip 02.</figcaption>
+            </figure>
+
+            <figure>
+                <video controls preload="metadata">
+                    <source src="movement-3.mp4" type="video/mp4">
+                    <source src="movement-3.mov" type="video/quicktime">
+                </video>
+                <figcaption>Prototype movement clip 03.</figcaption>
+            </figure>
+
+            <figure>
+                <video controls preload="metadata">
+                    <source src="movement-4.mp4" type="video/mp4">
+                    <source src="movement-4.mov" type="video/quicktime">
+                </video>
+                <figcaption>Prototype movement clip 04.</figcaption>
+            </figure>
+
+            <figure>
+                <video controls preload="metadata">
+                    <source src="movement-5.mp4" type="video/mp4">
+                    <source src="movement-5.mov" type="video/quicktime">
+                </video>
+                <figcaption>Additional prototype footage.</figcaption>
+            </figure>
+
+        </div>
+    </section>
+
+    <!-- 08 FINAL PRESENTATION -->
+
+    <section class="project-section">
+        <h2>08. Final Project Presentation</h2>
+
+        <p>
+            The final video below is the presentation prepared
+            for our professors and peers. It brings together
+            the project concept, design direction and completed
+            prototype.
         </p>
 
         <video class="project-video" controls preload="metadata">
-            <source src="final-demo.mp4" type="video/mp4">
-            Your browser does not support the video element.
+            <source src="final-presentation.mp4" type="video/mp4">
+            Your browser does not support this video.
         </video>
 
-        <p style="font-size:12px; color:var(--muted);">
-            Final automated salter demonstration.
-        </p>
+        <figcaption>
+            Final Automated Salter project presentation.
+        </figcaption>
     </section>
+
+    <!-- 09 REFLECTION -->
 
     <section class="project-section">
-        <h2>05. What I Learned</h2>
+        <h2>09. Reflection & Takeaways</h2>
 
         <p>
-            This project helped me understand the connection between
-            design and practical construction. A design needs to do
-            more than communicate an idea; it also needs to be
-            achievable with the available materials, tools and
-            construction methods.
+            This project gave me an early opportunity to experience
+            the process of taking an engineering idea from a design
+            model to a physical prototype. I learned that developing
+            a design involves more than deciding how something
+            should look; it also requires thinking about materials,
+            construction, component placement, power requirements
+            and how the system will operate.
         </p>
 
         <p>
-            I gained experience in developing a design model,
-            working with physical materials, cutting and assembling
-            a prototype, and collaborating on a larger engineering
-            project.
+            My involvement in both modelling and physical
+            construction helped me understand the connection
+            between design decisions and practical implementation.
+            It also introduced me to the importance of safety
+            considerations when designing an automated machine.
         </p>
     </section>
 
-    <section class="project-section">
-        <h2>Project Gallery</h2>
-
-        <div class="project-gallery">
-            <figure>
-                <img src="final-front.jpg" alt="Front view of completed salter">
-                <figcaption>Completed prototype — front view.</figcaption>
-            </figure>
-
-            <figure>
-                <img src="final-side.jpg" alt="Side view of completed salter">
-                <figcaption>Completed prototype — side view.</figcaption>
-            </figure>
-        </div>
-    </section>
+    <div class="project-end">
+        <a href="../../index.html#projects" class="back-link">
+            ← Back to all projects
+        </a>
+    </div>
 
 </main>
 
