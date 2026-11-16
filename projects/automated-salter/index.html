@@ -391,45 +391,63 @@
         </ul>
     </section>
 
-    <!-- 04 SAFETY -->
+    
+<!-- 04 SAFETY & EMERGENCY STOP -->
 
-    <section class="project-section">
-        <h2>04. Safety Considerations & Emergency Stop</h2>
+<section class="project-section">
+    <h2>04. Safety Design & Emergency Stop</h2>
 
-        <p>
-            One important consideration during the design process
-            was how the machine should respond if something went
-            wrong while operating autonomously.
-        </p>
+    <p>
+        Safety was an important consideration when designing
+        the automated salter. Since the machine was intended
+        to move autonomously using powered motors, we needed
+        a way to stop its operation immediately if something
+        went wrong.
+    </p>
 
-        <p>
-            Since the proposed salter involved powered motors and
-            autonomous movement, a malfunction could cause the
-            machine to continue moving or operating when it
-            should not. This raised the need for an emergency
-            stop function.
-        </p>
+    <p>
+        To address this, we implemented an emergency stop
+        button and positioned it in an easily accessible
+        location on the salter. This allowed the operator
+        to quickly reach the button and stop the machine
+        if it malfunctioned or behaved unexpectedly.
+    </p>
 
-        <div class="design-box">
-            <h3>Emergency Stop Concept</h3>
-
-            <p>
-                I recognized that the system should have a way
-                to immediately stop its operation if a malfunction
-                occurred or if the machine behaved unexpectedly.
-                An emergency stop would provide a direct way to
-                interrupt operation rather than relying only on
-                the autonomous software to correct the problem.
-            </p>
-        </div>
+    <div class="design-box">
+        <h3>Emergency Stop Implementation</h3>
 
         <p>
-            This was an important design consideration because
-            automation should not only perform its intended task;
-            it should also account for unexpected situations and
-            allow the operator to intervene.
+            The emergency stop was incorporated into the
+            physical prototype rather than remaining only
+            a proposed feature. Its accessible placement
+            was an intentional design decision, allowing
+            for quick operator intervention during operation.
         </p>
-    </section>
+    </div>
+
+    <p>
+        This reinforced an important engineering principle:
+        an automated system should not only perform its
+        intended function, but also provide a practical
+        way for an operator to intervene when necessary.
+        Considering accessibility and safety during the
+        design process helped make the prototype more
+        practical to operate.
+    </p>
+
+    <figure style="margin-top:28px;">
+        <img src="emergency-stop.jpg"
+             alt="Emergency stop button installed on the automated salter"
+             style="width:100%; max-height:500px; object-fit:contain;
+             background:#14243a; border:1px solid var(--border);
+             border-radius:8px;">
+
+        <figcaption>
+            Accessible emergency stop button implemented on the prototype.
+        </figcaption>
+    </figure>
+</section>
+
 
     <!-- 05 CHALLENGES -->
 
