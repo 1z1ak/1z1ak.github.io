@@ -23,7 +23,9 @@
             font-size: 14px;
         }
 
-        .project-hero { max-width: 900px; }
+        .project-hero {
+            max-width: 900px;
+        }
 
         .project-hero h1 {
             font-size: clamp(40px, 5vw, 62px);
@@ -62,7 +64,9 @@
             font-size: 14px;
         }
 
-        .project-section { margin-top: 70px; }
+        .project-section {
+            margin-top: 70px;
+        }
 
         .project-section h2 {
             font-size: 27px;
@@ -74,6 +78,8 @@
             margin: 30px 0 10px;
         }
 
+        /* IMAGE GALLERY */
+
         .project-gallery {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -81,7 +87,9 @@
             margin-top: 28px;
         }
 
-        .project-gallery figure { margin: 0; }
+        .project-gallery figure {
+            margin: 0;
+        }
 
         .project-gallery img {
             display: block;
@@ -100,6 +108,8 @@
             margin-top: 10px;
         }
 
+        /* GENERAL VIDEO */
+
         .project-video {
             display: block;
             width: 100%;
@@ -110,45 +120,37 @@
             border-radius: 8px;
         }
 
-        
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px;
-    margin-top: 28px;
-    align-items: start;
-}
+        /* VIDEO GALLERY */
 
-.video-grid figure {
-    margin: 0;
-    min-width: 0;
-}
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 28px;
+            margin-top: 28px;
+            align-items: start;
+        }
 
-.video-grid video {
-    display: block;
-    width: 100%;
-    height: 260px;
-    object-fit: contain;
-    background: #000;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-}
+        .video-grid figure {
+            margin: 0;
+            min-width: 0;
+        }
 
-.video-grid figcaption {
-    margin-top: 10px;
-    line-height: 1.6;
-}
+        .video-grid video {
+            display: block;
+            width: 100%;
+            height: 260px;
+            object-fit: contain;
+            background: #000;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
 
-@media (max-width: 700px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
+        .video-grid figcaption {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
 
-    .video-grid video {
-        height: 260px;
-    }
-}
-
+        /* CONTENT BOXES */
 
         .contribution-box,
         .design-box,
@@ -174,20 +176,26 @@
             padding-left: 22px;
         }
 
-        .project-list li { margin-bottom: 8px; }
+        .project-list li {
+            margin-bottom: 8px;
+        }
 
         .challenge-item {
             padding: 20px 0;
             border-bottom: 1px solid var(--border);
         }
 
-        .challenge-item:last-child { border-bottom: none; }
+        .challenge-item:last-child {
+            border-bottom: none;
+        }
 
         .challenge-item h3 {
             margin: 0 0 9px;
         }
 
-        .challenge-item p { margin: 0; }
+        .challenge-item p {
+            margin: 0;
+        }
 
         .project-end {
             margin-top: 80px;
@@ -195,12 +203,92 @@
             border-top: 1px solid var(--border);
         }
 
+        /* IMAGE ZOOM */
+
+        .project-detail img {
+            cursor: zoom-in;
+            transition: transform 0.2s ease;
+        }
+
+        .image-lightbox {
+            display: none;
+            position: fixed;
+            z-index: 99999;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            overflow: auto;
+        }
+
+        .image-lightbox.active {
+            display: flex;
+        }
+
+        .image-lightbox img {
+            max-width: 95%;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            cursor: zoom-in;
+            transition: transform 0.2s ease;
+        }
+
+        .image-lightbox .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 38px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 100000;
+        }
+
+        .image-lightbox .zoom-hint {
+            position: fixed;
+            bottom: 18px;
+            color: white;
+            font-size: 13px;
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* RESPONSIVE DESIGN */
+
         @media (max-width: 700px) {
-            .project-detail { padding: 45px 7%; }
-            .project-meta { grid-template-columns: 1fr 1fr; }
+            .project-detail {
+                padding: 45px 7%;
+            }
+
+            .project-meta {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .project-gallery,
-            .video-grid { grid-template-columns: 1fr; }
-            .project-gallery img { height: 250px; }
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-gallery img {
+                height: 250px;
+            }
+
+            .video-grid video {
+                height: 260px;
+            }
+
+            .image-lightbox {
+                padding: 12px;
+            }
+
+            .image-lightbox img {
+                max-width: 100%;
+                max-height: 85vh;
+            }
         }
     </style>
 </head>
@@ -301,6 +389,7 @@
                  style="width:100%; max-height:520px; object-fit:contain;
                  background:#14243a; border:1px solid var(--border);
                  border-radius:8px;">
+
             <figcaption>
                 Initial design model developed for the automated salter.
             </figcaption>
@@ -329,9 +418,11 @@
         </p>
 
         <div class="project-gallery">
+
             <figure>
                 <img src="design-revised.jpg"
                      alt="Revised automated salter design">
+
                 <figcaption>
                     Revised design after considering the project requirements.
                 </figcaption>
@@ -340,10 +431,12 @@
             <figure>
                 <img src="design-dimensions.jpg"
                      alt="Dimensions of the automated salter design">
+
                 <figcaption>
                     Design dimensions used to plan the physical structure.
                 </figcaption>
             </figure>
+
         </div>
 
         <div class="contribution-box">
@@ -414,63 +507,61 @@
         </ul>
     </section>
 
-    
-<!-- 04 SAFETY & EMERGENCY STOP -->
+    <!-- 04 SAFETY & EMERGENCY STOP -->
 
-<section class="project-section">
-    <h2>04. Safety Design & Emergency Stop</h2>
-
-    <p>
-        Safety was an important consideration when designing
-        the automated salter. Since the machine was intended
-        to move autonomously using powered motors, we needed
-        a way to stop its operation immediately if something
-        went wrong.
-    </p>
-
-    <p>
-        To address this, we implemented an emergency stop
-        button and positioned it in an easily accessible
-        location on the salter. This allowed the operator
-        to quickly reach the button and stop the machine
-        if it malfunctioned or behaved unexpectedly.
-    </p>
-
-    <div class="design-box">
-        <h3>Emergency Stop Implementation</h3>
+    <section class="project-section">
+        <h2>04. Safety Design & Emergency Stop</h2>
 
         <p>
-            The emergency stop was incorporated into the
-            physical prototype rather than remaining only
-            a proposed feature. Its accessible placement
-            was an intentional design decision, allowing
-            for quick operator intervention during operation.
+            Safety was an important consideration when designing
+            the automated salter. Since the machine was intended
+            to move autonomously using powered motors, we needed
+            a way to stop its operation immediately if something
+            went wrong.
         </p>
-    </div>
 
-    <p>
-        This reinforced an important engineering principle:
-        an automated system should not only perform its
-        intended function, but also provide a practical
-        way for an operator to intervene when necessary.
-        Considering accessibility and safety during the
-        design process helped make the prototype more
-        practical to operate.
-    </p>
+        <p>
+            To address this, we implemented an emergency stop
+            button and positioned it in an easily accessible
+            location on the salter. This allowed the operator
+            to quickly reach the button and stop the machine
+            if it malfunctioned or behaved unexpectedly.
+        </p>
 
-    <figure style="margin-top:28px;">
-        <img src="emergency-stop.jpg"
-             alt="Emergency stop button installed on the automated salter"
-             style="width:100%; max-height:500px; object-fit:contain;
-             background:#14243a; border:1px solid var(--border);
-             border-radius:8px;">
+        <div class="design-box">
+            <h3>Emergency Stop Implementation</h3>
 
-        <figcaption>
-            Accessible emergency stop button implemented on the prototype.
-        </figcaption>
-    </figure>
-</section>
+            <p>
+                The emergency stop was incorporated into the
+                physical prototype rather than remaining only
+                a proposed feature. Its accessible placement
+                was an intentional design decision, allowing
+                for quick operator intervention during operation.
+            </p>
+        </div>
 
+        <p>
+            This reinforced an important engineering principle:
+            an automated system should not only perform its
+            intended function, but also provide a practical
+            way for an operator to intervene when necessary.
+            Considering accessibility and safety during the
+            design process helped make the prototype more
+            practical to operate.
+        </p>
+
+        <figure style="margin-top:28px;">
+            <img src="emergency-stop.jpg"
+                 alt="Emergency stop button installed on the automated salter"
+                 style="width:100%; max-height:500px; object-fit:contain;
+                 background:#14243a; border:1px solid var(--border);
+                 border-radius:8px;">
+
+            <figcaption>
+                Accessible emergency stop button implemented on the prototype.
+            </figcaption>
+        </figure>
+    </section>
 
     <!-- 05 CHALLENGES -->
 
@@ -583,22 +674,13 @@
         </p>
 
         <figure style="margin-top:28px;">
-            <img src="building-process.jpg"
-                 alt="Building and assembling the automated salter"
-                 style="width:100%; max-height:520px; object-fit:contain;
-                 background:#14243a; border:1px solid var(--border);
-                 border-radius:8px;">
-            <figcaption>
-                Physical construction and assembly of the prototype.
-            </figcaption>
-        </figure>
-
-        <figure style="margin-top:28px;">
             <img src="final-build.jpg"
                  alt="Completed automated salter prototype"
-                 style="width:100%; max-height:520px; object-fit:contain;
-                 background:#14243a; border:1px solid var(--border);
+                 style="display:block; width:100%; max-height:520px;
+                 object-fit:contain; background:#14243a;
+                 border:1px solid var(--border);
                  border-radius:8px;">
+
             <figcaption>
                 Completed physical build of the automated salter.
             </figcaption>
@@ -623,7 +705,10 @@
                     <source src="movement-1.mp4" type="video/mp4">
                     <source src="movement-1.mov" type="video/quicktime">
                 </video>
-                <figcaption>Prototype movement clip 01.</figcaption>
+
+                <figcaption>
+                    Prototype movement clip 01.
+                </figcaption>
             </figure>
 
             <figure>
@@ -631,7 +716,10 @@
                     <source src="movement-2.mp4" type="video/mp4">
                     <source src="movement-2.mov" type="video/quicktime">
                 </video>
-                <figcaption>Prototype movement clip 02.</figcaption>
+
+                <figcaption>
+                    Prototype movement clip 02.
+                </figcaption>
             </figure>
 
             <figure>
@@ -639,15 +727,10 @@
                     <source src="movement-3.mp4" type="video/mp4">
                     <source src="movement-3.mov" type="video/quicktime">
                 </video>
-                <figcaption>Prototype movement clip 03.</figcaption>
-            </figure>
 
-            <figure>
-                <video controls preload="metadata">
-                    <source src="movement-4.mp4" type="video/mp4">
-                    <source src="movement-4.mov" type="video/quicktime">
-                </video>
-                <figcaption>Prototype movement clip 04.</figcaption>
+                <figcaption>
+                    Prototype movement clip 03.
+                </figcaption>
             </figure>
 
             <figure>
@@ -655,7 +738,10 @@
                     <source src="movement-5.mp4" type="video/mp4">
                     <source src="movement-5.mov" type="video/quicktime">
                 </video>
-                <figcaption>Additional prototype footage.</figcaption>
+
+                <figcaption>
+                    Additional prototype footage.
+                </figcaption>
             </figure>
 
         </div>
@@ -707,6 +793,8 @@
         </p>
     </section>
 
+    <!-- END -->
+
     <div class="project-end">
         <a href="../../index.html#projects" class="back-link">
             ← Back to all projects
@@ -718,6 +806,108 @@
 <footer>
     <p>© 2026 IZIAK KWAN. All rights reserved.</p>
 </footer>
+
+<!-- IMAGE ZOOM VIEWER -->
+
+<div class="image-lightbox" id="imageLightbox">
+
+    <button class="close-lightbox"
+            id="closeLightbox"
+            aria-label="Close image viewer">
+        &times;
+    </button>
+
+    <img id="lightboxImage"
+         src=""
+         alt="Enlarged project image">
+
+    <div class="zoom-hint">
+        Scroll to zoom · Double-click to zoom · Click outside to close
+    </div>
+
+</div>
+
+<!-- IMAGE ZOOM JAVASCRIPT -->
+
+<script>
+    const lightbox = document.getElementById("imageLightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeButton = document.getElementById("closeLightbox");
+
+    let zoom = 1;
+
+    document.querySelectorAll(".project-detail img").forEach(image => {
+
+        image.addEventListener("click", () => {
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+
+            zoom = 1;
+            lightboxImage.style.transform = "scale(1)";
+
+            lightbox.classList.add("active");
+            document.body.style.overflow = "hidden";
+
+        });
+
+    });
+
+    function closeViewer() {
+
+        lightbox.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+        zoom = 1;
+        lightboxImage.style.transform = "scale(1)";
+
+    }
+
+    closeButton.addEventListener("click", closeViewer);
+
+    // Click outside image to close
+    lightbox.addEventListener("click", event => {
+
+        if (event.target === lightbox) {
+            closeViewer();
+        }
+
+    });
+
+    // Scroll wheel zoom
+    lightbox.addEventListener("wheel", event => {
+
+        if (!lightbox.classList.contains("active")) return;
+
+        event.preventDefault();
+
+        zoom += event.deltaY < 0 ? 0.2 : -0.2;
+
+        zoom = Math.min(Math.max(zoom, 1), 5);
+
+        lightboxImage.style.transform = `scale(${zoom})`;
+
+    }, { passive: false });
+
+    // Double click to zoom
+    lightboxImage.addEventListener("dblclick", () => {
+
+        zoom = zoom === 1 ? 2 : 1;
+
+        lightboxImage.style.transform = `scale(${zoom})`;
+
+    });
+
+    // Escape key to close
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+            closeViewer();
+        }
+
+    });
+</script>
 
 </body>
 </html>
