@@ -16,17 +16,11 @@
     <link rel="stylesheet" href="style.css">
 
     <!-- HERO CAROUSEL STYLING -->
-
     <style>
-
-        /* Carousel container */
-
         .hero-carousel {
             width: 100%;
             min-width: 0;
         }
-
-        /* Main clickable image */
 
         .hero-carousel .hero-image {
             position: relative;
@@ -36,8 +30,6 @@
             cursor: pointer;
             text-decoration: none;
         }
-
-        /* Image layers */
 
         .hero-carousel .hero-slide {
             display: block;
@@ -51,32 +43,22 @@
                 transform 0.6s ease;
         }
 
-        /* First image establishes container size */
-
         .hero-carousel #hero-image-a {
             position: relative;
         }
-
-        /* Second image overlays the first */
 
         .hero-carousel #hero-image-b {
             position: absolute;
             inset: 0;
         }
 
-        /* Currently visible image */
-
         .hero-carousel .hero-slide.is-active {
             opacity: 1;
         }
 
-        /* Hover effect */
-
         .hero-carousel .hero-image:hover .hero-slide.is-active {
             transform: scale(1.015);
         }
-
-        /* Navigation dots container */
 
         .hero-dots {
             display: flex;
@@ -86,18 +68,14 @@
             margin-top: 20px;
         }
 
-        /* Individual navigation dots */
-
         .hero-dot {
             width: 8px;
             height: 8px;
             padding: 0;
             border: none;
             border-radius: 20px;
-
             background: #b8b8b8;
             opacity: 0.55;
-
             cursor: pointer;
 
             transition:
@@ -107,51 +85,37 @@
                 transform 0.35s ease;
         }
 
-        /* Active navigation dot */
-
         .hero-dot.active {
             width: 25px;
             background: #222;
             opacity: 1;
         }
 
-        /* Hover effect */
-
         .hero-dot:hover {
             opacity: 1;
             transform: scale(1.15);
         }
-
-        /* Keyboard accessibility */
 
         .hero-dot:focus-visible {
             outline: 2px solid #555;
             outline-offset: 4px;
         }
 
-        /* Respect reduced motion preferences */
-
         @media (prefers-reduced-motion: reduce) {
-
             .hero-carousel .hero-slide,
             .hero-dot {
                 transition: none;
             }
-
         }
-
     </style>
 
 </head>
 
 <body>
 
-<!-- =====================================
-     NAVIGATION
-===================================== -->
+<!-- NAVIGATION -->
 
 <header>
-
     <nav class="navbar">
 
         <a href="#" class="logo">
@@ -159,11 +123,8 @@
         </a>
 
         <div class="nav-links">
-
             <a href="#projects">Projects</a>
-
             <a href="#skills">Skills</a>
-
             <a href="#about">About</a>
 
             <a href="documents/resume.pdf"
@@ -172,19 +133,15 @@
                class="nav-resume">
                 Resume ↗
             </a>
-
         </div>
 
     </nav>
-
 </header>
 
 
 <main>
 
-    <!-- =====================================
-         HERO SECTION
-    ===================================== -->
+    <!-- HERO SECTION -->
 
     <section class="hero">
 
@@ -200,13 +157,11 @@
             </h1>
 
             <p class="hero-description">
-
                 I'm an Engineering Science student interested in
                 mechanical design, 3D CAD, electronics and automation.
 
                 I enjoy developing engineering projects through
                 design, prototyping, testing and problem-solving.
-
             </p>
 
             <div class="hero-buttons">
@@ -250,7 +205,7 @@
 
         <div class="hero-carousel">
 
-            <a href="projects/differential-gearbox/"
+            <a href="projects/automated-salter/"
                class="hero-image"
                id="hero-project-link">
 
@@ -259,15 +214,15 @@
                 <img
                     id="hero-image-a"
                     class="hero-slide is-active"
-                    src="projects/differential-gearbox/thumbnail 2.PNG"
-                    alt="Differential Gearbox SolidWorks model">
+                    src="projects/automated-salter/thumbnail.jpg"
+                    alt="Automated salter engineering prototype">
 
                 <!-- Image Layer B -->
 
                 <img
                     id="hero-image-b"
                     class="hero-slide"
-                    src="projects/automated-salter/thumbnail.jpg"
+                    src="projects/differential-gearbox/thumbnail 2.PNG"
                     alt=""
                     aria-hidden="true">
 
@@ -278,15 +233,13 @@
                     <span class="image-label-dot"></span>
 
                     <div>
-
                         <strong id="hero-project-title">
-                            DIFFERENTIAL GEARBOX
+                            AUTOMATED SALTER
                         </strong>
 
                         <p id="hero-project-category">
-                            CAD · MECHANICAL DESIGN
+                            PROTOTYPING · AUTOMATION
                         </p>
-
                     </div>
 
                 </div>
@@ -301,14 +254,14 @@
                 <button
                     class="hero-dot active"
                     data-index="0"
-                    aria-label="Show Differential Gearbox"
+                    aria-label="Show Automated Salter"
                     aria-pressed="true">
                 </button>
 
                 <button
                     class="hero-dot"
                     data-index="1"
-                    aria-label="Show Automated Salter"
+                    aria-label="Show Differential Gearbox"
                     aria-pressed="false">
                 </button>
 
@@ -326,9 +279,7 @@
     </section>
 
 
-    <!-- =====================================
-         PROJECTS SECTION
-    ===================================== -->
+    <!-- PROJECTS SECTION -->
 
     <section id="projects" class="section">
 
@@ -343,11 +294,9 @@
                 <h2>Engineering Projects</h2>
 
                 <p class="section-description">
-
                     A collection of engineering projects involving
                     mechanical design, automation, electronics
                     and hands-on development.
-
                 </p>
 
             </div>
@@ -362,61 +311,7 @@
         <div class="project-grid">
 
 
-            <!-- PROJECT 01: DIFFERENTIAL GEARBOX -->
-
-            <a href="projects/differential-gearbox/"
-               class="project-card">
-
-                <div class="project-image">
-
-                    <img
-                        src="projects/differential-gearbox/thumbnail 2.PNG"
-                        alt="SolidWorks differential gearbox assembly">
-
-                    <span class="project-view">
-                        EXPLORE PROJECT ↗
-                    </span>
-
-                </div>
-
-                <div class="project-info">
-
-                    <div class="project-category">
-                        MECHANICAL DESIGN
-                    </div>
-
-                    <div class="project-title-row">
-
-                        <h3>Differential Gearbox</h3>
-
-                        <span class="project-number">
-                            01
-                        </span>
-
-                    </div>
-
-                    <p class="project-description">
-
-                        3D modelling and assembly of a mechanical
-                        differential gearbox, focusing on component
-                        design, positioning and mechanical relationships.
-
-                    </p>
-
-                    <div class="project-tags">
-
-                        <span>SolidWorks</span>
-                        <span>3D CAD</span>
-                        <span>Assembly Design</span>
-
-                    </div>
-
-                </div>
-
-            </a>
-
-
-            <!-- PROJECT 02: AUTOMATED SALTER -->
+            <!-- PROJECT 01: AUTOMATED SALTER -->
 
             <a href="projects/automated-salter/"
                class="project-card">
@@ -444,25 +339,71 @@
                         <h3>Automated Salter</h3>
 
                         <span class="project-number">
+                            01
+                        </span>
+
+                    </div>
+
+                    <p class="project-description">
+                        An engineering project involving the design
+                        and development of an automated salt
+                        distribution system.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Prototyping</span>
+                        <span>Automation</span>
+                        <span>Mechanical Design</span>
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- PROJECT 02: DIFFERENTIAL GEARBOX -->
+
+            <a href="projects/differential-gearbox/"
+               class="project-card">
+
+                <div class="project-image">
+
+                    <img
+                        src="projects/differential-gearbox/thumbnail 2.PNG"
+                        alt="SolidWorks differential gearbox assembly">
+
+                    <span class="project-view">
+                        EXPLORE PROJECT ↗
+                    </span>
+
+                </div>
+
+                <div class="project-info">
+
+                    <div class="project-category">
+                        MECHANICAL DESIGN
+                    </div>
+
+                    <div class="project-title-row">
+
+                        <h3>Differential Gearbox</h3>
+
+                        <span class="project-number">
                             02
                         </span>
 
                     </div>
 
                     <p class="project-description">
-
-                        An engineering project involving the design
-                        and development of an automated salt
-                        distribution system.
-
+                        3D modelling and assembly of a mechanical
+                        differential gearbox, focusing on component
+                        design, positioning and mechanical relationships.
                     </p>
 
                     <div class="project-tags">
-
-                        <span>Prototyping</span>
-                        <span>Automation</span>
-                        <span>Mechanical Design</span>
-
+                        <span>SolidWorks</span>
+                        <span>3D CAD</span>
+                        <span>Assembly Design</span>
                     </div>
 
                 </div>
@@ -504,19 +445,15 @@
                     </div>
 
                     <p class="project-description">
-
                         Development of an AM radio, exploring
                         electronic circuits, component integration
                         and signal reception.
-
                     </p>
 
                     <div class="project-tags">
-
                         <span>Circuit Design</span>
                         <span>Electronics</span>
                         <span>Testing</span>
-
                     </div>
 
                 </div>
@@ -529,9 +466,7 @@
     </section>
 
 
-    <!-- =====================================
-         TECHNICAL SKILLS
-    ===================================== -->
+    <!-- TECHNICAL SKILLS -->
 
     <section id="skills" class="section skills">
 
@@ -546,10 +481,8 @@
                 <h2>Technical Skills</h2>
 
                 <p class="section-description">
-
                     Engineering tools and technical areas
                     developed through coursework and projects.
-
                 </p>
 
             </div>
@@ -576,15 +509,10 @@
                 </p>
 
                 <div class="skill-list">
-
                     <span>SolidWorks</span>
-
                     <span>3D CAD Modelling</span>
-
                     <span>Assembly Design</span>
-
                     <span>Engineering Drawings</span>
-
                 </div>
 
             </div>
@@ -606,15 +534,10 @@
                 </p>
 
                 <div class="skill-list">
-
                     <span>Circuit Design</span>
-
                     <span>Electronics</span>
-
                     <span>Prototyping</span>
-
                     <span>Automation</span>
-
                 </div>
 
             </div>
@@ -636,13 +559,9 @@
                 </p>
 
                 <div class="skill-list">
-
                     <span>MATLAB</span>
-
                     <span>C++</span>
-
                     <span>Numerical Methods</span>
-
                 </div>
 
             </div>
@@ -653,9 +572,7 @@
     </section>
 
 
-    <!-- =====================================
-         ABOUT ME
-    ===================================== -->
+    <!-- ABOUT ME -->
 
     <section id="about" class="section about">
 
@@ -678,30 +595,24 @@
             <div class="about-text">
 
                 <p>
-
                     Hello, I'm Iziak, an Engineering Science student
                     at Simon Fraser University with an interest in
                     mechanical design, electronics and product development.
-
                 </p>
 
                 <p>
-
                     I enjoy working on projects that involve taking
                     an idea from an initial concept to a functional
                     design or prototype. Through CAD modelling,
                     mechanical assemblies, circuit development and
                     hands-on experimentation, I aim to strengthen
                     my engineering knowledge and practical skills.
-
                 </p>
 
                 <p>
-
                     This portfolio documents my projects, the
                     challenges I encounter and the technical
                     skills I continue to develop.
-
                 </p>
 
 
@@ -765,9 +676,7 @@
     </section>
 
 
-    <!-- =====================================
-         CONTACT
-    ===================================== -->
+    <!-- CONTACT -->
 
     <section id="contact" class="section contact">
 
@@ -778,10 +687,8 @@
         <h2>Let's Connect.</h2>
 
         <p>
-
             Interested in my projects or looking to connect?
             Feel free to reach out.
-
         </p>
 
 
@@ -810,9 +717,7 @@
 </main>
 
 
-<!-- =====================================
-     FOOTER
-===================================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -827,29 +732,15 @@
 </footer>
 
 
-<!-- =====================================
-     HERO PROJECT CAROUSEL JAVASCRIPT
-===================================== -->
+<!-- HERO PROJECT CAROUSEL JAVASCRIPT -->
 
 <script>
 
 /* -------------------------------------
    PROJECT DATA
-
-   Add future projects here.
 ------------------------------------- */
 
 const heroProjects = [
-
-    {
-        image: "projects/differential-gearbox/thumbnail 2.PNG",
-
-        title: "DIFFERENTIAL GEARBOX",
-
-        category: "CAD · MECHANICAL DESIGN",
-
-        link: "projects/differential-gearbox/"
-    },
 
     {
         image: "projects/automated-salter/thumbnail.jpg",
@@ -859,6 +750,16 @@ const heroProjects = [
         category: "PROTOTYPING · AUTOMATION",
 
         link: "projects/automated-salter/"
+    },
+
+    {
+        image: "projects/differential-gearbox/thumbnail 2.PNG",
+
+        title: "DIFFERENTIAL GEARBOX",
+
+        category: "CAD · MECHANICAL DESIGN",
+
+        link: "projects/differential-gearbox/"
     },
 
     {
@@ -926,9 +827,6 @@ let rotationTimer;
 
 /* -------------------------------------
    PRELOAD PROJECT IMAGES
-
-   Helps prevent loading delays
-   during image transitions.
 ------------------------------------- */
 
 heroProjects.forEach(project => {
@@ -1130,9 +1028,6 @@ resetRotation();
 
 /* -------------------------------------
    PAUSE WHEN TAB IS HIDDEN
-
-   Prevents unnecessary background
-   slideshow changes.
 ------------------------------------- */
 
 document.addEventListener(
